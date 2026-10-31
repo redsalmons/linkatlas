@@ -1,0 +1,73 @@
+name: MobileWatchdog
+options:
+  bundleIdPrefix: com.redsalmons
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""  # set your Apple Developer Team ID to run on a device
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+packages:
+  MapLibre:
+    url: https://github.com/maplibre/maplibre-gl-native-distribution
+    exactVersion: 7.0.0
+targets:
+  MobileWatchdog:
+    type: application
+    platform: iOS
+    sources: [App]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Mobile Watchdog
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSLocationWhenInUseUsageDescription: 在地图上显示你当前的位置
+    entitlements:
+      path: App/MobileWatchdog.entitlements
+      properties:
+        com.apple.developer.networking.networkextension: [packet-tunnel-provider]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.redsalmons.mobilewatchdog
+    dependencies:
+      - target: PacketTunnel
+      - package: MapLibre
+  PacketTunnel:
+    type: app-extension
+    platform: iOS
+    sources:
+      - PacketTunnel
+      - path: ../core/src
+      - path: ../core/analyzer
+      - path: ../core/include
+        buildPhase: none
+      - path: ../core/third_party/lwip/core
+    info:
+      path: PacketTunnel/Info.plist
+      properties:
+        CFBundleDisplayName: Mobile Watchdog Tunnel
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.networkextension.packet-tunnel
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PacketTunnelProvider
+    entitlements:
+      path: PacketTunnel/PacketTunnel.entitlements
+      properties:
+        com.apple.developer.networking.networkextension: [packet-tunnel-provider]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.redsalmons.mobilewatchdog.tunnel
+        SWIFT_OBJC_BRIDGING_HEADER: PacketTunnel/PacketTunnel-Bridging-Header.h
+        USE_HEADERMAP: NO
+        HEADER_SEARCH_PATHS:
+          - "$(SRCROOT)/../core/src"
+          - "$(SRCROOT)/../core/include"
+          - "$(SRCROOT)/../core/third_party/lwip/include"
+          - "$(SRCROOT)/../core/third_party/lwip/ports/include"
+        CLANG_CXX_LANGUAGE_STANDARD: c++17
+        GCC_C_LANGUAGE_STANDARD: gnu11
+        CLANG_ENABLE_MODULES: NO  # lwIP and Darwin both define struct ip6_hdr; modules reject that

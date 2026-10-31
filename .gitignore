@@ -1,0 +1,13 @@
+.DS_Store
+core/build*/
+# iOS
+ios/*.xcodeproj/
+ios/build/
+xcuserdata/
+# Android
+android/.gradle/
+android/.idea/
+android/local.properties
+android/app/.cxx/
+android/**/build/
+*.iml

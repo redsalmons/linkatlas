@@ -1,0 +1,6 @@
+这是一个mobile项目:
+
+需要兼容ios和android
+
+要求UI实现必须是native，但是保持画面的一致性。
+

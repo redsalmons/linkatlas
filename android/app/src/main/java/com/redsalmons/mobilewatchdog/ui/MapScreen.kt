@@ -37,7 +37,7 @@ import kotlin.coroutines.resume
 
 object MapConfig {
     // Placeholder style; replace with the production tile style URL.
-    const val STYLE_URL = "https://demotiles.maplibre.org/style.json"
+    const val STYLE_URL = "https://tiles.openfreemap.org/styles/liberty"
 }
 
 /** Starts on the whole world, then flies to the user's location once it is known. */

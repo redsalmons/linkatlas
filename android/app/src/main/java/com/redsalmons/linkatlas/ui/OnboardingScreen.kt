@@ -11,6 +11,8 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -39,6 +41,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.redsalmons.linkatlas.R
@@ -102,14 +105,8 @@ fun OnboardingScreen(onFinish: () -> Unit) {
     ) {
         Spacer(Modifier.weight(1f))
 
-        Text(
-            stringResource(R.string.onboarding_hello),
-            style = TextStyle(
-                fontSize = 96.sp,
-                fontWeight = FontWeight.Light,
-                letterSpacing = 2.sp,
-                brush = Brush.verticalGradient(GreetingGradient),
-            ),
+        WavingGreeting(
+            text = stringResource(R.string.onboarding_hello),
             modifier = Modifier.rotate(angle),
         )
 
@@ -142,6 +139,35 @@ fun OnboardingScreen(onFinish: () -> Unit) {
                 fontWeight = FontWeight.SemiBold, color = Color.White)
         }
         Spacer(Modifier.height(12.dp))
+    }
+}
+
+/** The greeting rendered glyph-by-glyph so it ripples like the lines below. */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun WavingGreeting(text: String, modifier: Modifier = Modifier) {
+    val transition = rememberInfiniteTransition(label = "greeting-wave")
+    val phase by transition.animateFloat(
+        initialValue = 0f,
+        targetValue = (2 * PI).toFloat(),
+        animationSpec = infiniteRepeatable(tween(2800, easing = LinearEasing)),
+        label = "greeting-phase",
+    )
+    FlowRow(modifier = modifier, horizontalArrangement = Arrangement.Center) {
+        text.forEachIndexed { index, char ->
+            Text(
+                char.toString(),
+                fontSize = 64.sp,
+                fontWeight = FontWeight.Light,
+                letterSpacing = 0.5.sp,
+                style = TextStyle(brush = Brush.verticalGradient(GreetingGradient)),
+                modifier = Modifier.graphicsLayer {
+                    val wave = phase + index * 0.55f
+                    translationY = sin(wave) * 5.dp.toPx()
+                    rotationZ = cos(wave) * 2.2f
+                },
+            )
+        }
     }
 }
 

@@ -67,7 +67,7 @@ Mikään näistä pyynnöistä ei sisällä yhteystietueitasi.";
 "隐私政策" = "Tietosuojakäytäntö";
 
 /* Onboarding */
-"你好" = "Hei";
+"知道你的设备在和谁通信" = "Tiedä, kenen kanssa laitteesi puhuu";
 "看清自己的连接" = "Näe omat yhteytesi";
 "不读内容，不落盘" = "Sisältöä ei lueta, mitään ei jää levylle";
 "本地分析，主动查询才联网" = "Paikallinen analyysi — verkossa vain kyselyn aikana";

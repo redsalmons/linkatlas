@@ -20,11 +20,21 @@ struct OnboardingView: View {
         VStack(spacing: 0) {
             Spacer()
 
-            Text("你好")
-                .font(.system(size: 96, weight: .light))
-                .tracking(2)
-                .foregroundStyle(greeting)
-                .rotationEffect(.degrees(angle))
+            TimelineView(.animation(minimumInterval: 1.0 / 30.0)) { context in
+                let time = context.date.timeIntervalSinceReferenceDate
+                FlowRows(vSpacing: 10) {
+                    ForEach(Array(String(localized: "知道你的设备在和谁通信").enumerated()), id: \.offset) { index, ch in
+                        let wave = time * 2.4 + Double(index) * 0.55
+                        Text(String(ch))
+                            .font(.system(size: 64, weight: .light))
+                            .foregroundStyle(greeting)
+                            .offset(y: sin(wave) * 5)
+                            .rotationEffect(.degrees(cos(wave) * 2.2))
+                    }
+                }
+                .padding(.horizontal, 24)
+            }
+            .rotationEffect(.degrees(angle))
 
             Spacer().frame(height: 34)
 
@@ -84,6 +94,47 @@ struct OnboardingView: View {
     private func randomAngle() -> Double {
         let offset = Double(Int.random(in: 0..<360))
         return (Bool.random() ? 1 : -1) * (720 + offset)
+    }
+}
+
+/// Rows that wrap children left-to-right, centering each row.
+private struct FlowRows: Layout {
+    var hSpacing: CGFloat = 0
+    var vSpacing: CGFloat = 0
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let limit = proposal.width ?? .infinity
+        var x: CGFloat = 0, y: CGFloat = 0, rowH: CGFloat = 0
+        for s in subviews {
+            let size = s.sizeThatFits(.unspecified)
+            if x > 0, x + size.width > limit { y += rowH + vSpacing; x = 0; rowH = 0 }
+            x += size.width + hSpacing
+            rowH = max(rowH, size.height)
+        }
+        return CGSize(width: limit, height: y + rowH)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var rows: [[(Int, CGSize)]] = [[]]
+        var x: CGFloat = 0
+        for (i, s) in subviews.enumerated() {
+            let size = s.sizeThatFits(.unspecified)
+            if x > 0, x + size.width > bounds.width { rows.append([]); x = 0 }
+            rows[rows.count - 1].append((i, size))
+            x += size.width + hSpacing
+        }
+        var y = bounds.minY
+        for row in rows where !row.isEmpty {
+            let w = row.reduce(0) { $0 + $1.1.width } + hSpacing * CGFloat(row.count - 1)
+            let h = row.map(\.1.height).max() ?? 0
+            var cx = bounds.midX - w / 2
+            for (i, size) in row {
+                subviews[i].place(at: CGPoint(x: cx, y: y + (h - size.height) / 2),
+                                  anchor: .topLeading, proposal: ProposedViewSize(size))
+                cx += size.width + hSpacing
+            }
+            y += h + vSpacing
+        }
     }
 }
 

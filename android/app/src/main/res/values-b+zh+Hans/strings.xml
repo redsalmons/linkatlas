@@ -68,7 +68,7 @@
     <string name="confirm">确定</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">你好</string>
+    <string name="onboarding_hello">知道你的设备在和谁通信</string>
     <string name="onboarding_point_1">看清自己的连接</string>
     <string name="onboarding_point_2">不读内容，不落盘</string>
     <string name="onboarding_point_3">本地分析，主动查询才联网</string>

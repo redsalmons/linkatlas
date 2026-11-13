@@ -67,7 +67,7 @@ Keine dieser Anfragen enthält deine Verbindungsdaten.";
 "隐私政策" = "Datenschutzerklärung";
 
 /* Onboarding */
-"你好" = "Hallo";
+"知道你的设备在和谁通信" = "Wisse, mit wem dein Gerät kommuniziert";
 "看清自己的连接" = "Sehen Sie Ihre eigenen Verbindungen";
 "不读内容，不落盘" = "Kein Lesen von Inhalten, nichts auf der Festplatte";
 "本地分析，主动查询才联网" = "Lokale Analyse – nur online bei Abfrage";

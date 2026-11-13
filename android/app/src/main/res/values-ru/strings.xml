@@ -68,7 +68,7 @@
     <string name="confirm">ОК</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">Здравствуйте</string>
+    <string name="onboarding_hello">Узнайте, с кем общается ваше устройство</string>
     <string name="onboarding_point_1">Смотрите свои соединения</string>
     <string name="onboarding_point_2">Содержимое не читается, на диске ничего не остаётся</string>
     <string name="onboarding_point_3">Локальный анализ — в сети только при запросе</string>

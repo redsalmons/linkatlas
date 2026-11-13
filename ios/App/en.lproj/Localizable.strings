@@ -67,7 +67,7 @@ None of these requests carries your connection records.";
 "隐私政策" = "Privacy Policy";
 
 /* Onboarding */
-"你好" = "Hello";
+"知道你的设备在和谁通信" = "Know who your device is talking to";
 "看清自己的连接" = "See your own connections";
 "不读内容，不落盘" = "No content read, nothing on disk";
 "本地分析，主动查询才联网" = "Local analysis — online only when you query";

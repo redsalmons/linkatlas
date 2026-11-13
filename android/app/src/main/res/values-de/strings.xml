@@ -68,7 +68,7 @@ Keine dieser Anfragen enthält deine Verbindungsdaten.</string>
     <string name="confirm">OK</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">Hallo</string>
+    <string name="onboarding_hello">Wisse, mit wem dein Gerät kommuniziert</string>
     <string name="onboarding_point_1">Sehen Sie Ihre eigenen Verbindungen</string>
     <string name="onboarding_point_2">Kein Lesen von Inhalten, nichts auf der Festplatte</string>
     <string name="onboarding_point_3">Lokale Analyse – nur online bei Abfrage</string>

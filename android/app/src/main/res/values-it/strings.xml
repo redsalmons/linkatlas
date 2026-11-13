@@ -68,7 +68,7 @@ Nessuna di queste richieste contiene i tuoi record di connessione.</string>
     <string name="confirm">OK</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">Ciao</string>
+    <string name="onboarding_hello">Scopri con chi sta parlando il tuo dispositivo</string>
     <string name="onboarding_point_1">Vedi le tue connessioni</string>
     <string name="onboarding_point_2">Nessun contenuto letto, niente su disco</string>
     <string name="onboarding_point_3">Analisi locale — online solo quando interroghi</string>

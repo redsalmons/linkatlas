@@ -68,7 +68,7 @@
     <string name="confirm">OK</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">こんにちは</string>
+    <string name="onboarding_hello">デバイスが誰と通信しているかを知る</string>
     <string name="onboarding_point_1">自分の接続を確認する</string>
     <string name="onboarding_point_2">コンテンツは読まず、ディスクにも残しません</string>
     <string name="onboarding_point_3">ローカル分析——照会時のみオンライン</string>

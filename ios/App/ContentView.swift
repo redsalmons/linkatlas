@@ -6,7 +6,7 @@ struct ContentView: View {
     @StateObject private var routeModel: RouteMapModel
     @StateObject private var websiteModel = WebsiteStatsModel()
     @State private var path = NavigationPath()
-    @AppStorage("onboarded_v1") private var onboarded = false
+    @State private var onboarded = false
 
     init(capture: CaptureController) {
         self.capture = capture

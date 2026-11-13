@@ -68,7 +68,7 @@
     <string name="confirm">確定</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">你好</string>
+    <string name="onboarding_hello">知道你的裝置在和誰通訊</string>
     <string name="onboarding_point_1">查看自己的連線</string>
     <string name="onboarding_point_2">不讀取內容、不寫入磁碟</string>
     <string name="onboarding_point_3">本機分析——只有查詢時才連網</string>

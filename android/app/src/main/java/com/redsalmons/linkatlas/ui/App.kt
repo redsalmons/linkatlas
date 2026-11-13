@@ -64,7 +64,7 @@ private const val PAGE_HIDDEN = 6
 @Composable
 fun App(onCaptureReady: () -> Unit = {}) {
     val context = androidx.compose.ui.platform.LocalContext.current
-    var onboardingDone by remember { mutableStateOf(AppPrefs.onboardingDone(context)) }
+    var onboardingDone by rememberSaveable { mutableStateOf(false) }
     var legacySeen by remember { mutableStateOf(false) }
     val legacyInstalled = remember {
         runCatching {
@@ -92,10 +92,7 @@ fun App(onCaptureReady: () -> Unit = {}) {
         )
     }
     if (!onboardingDone) {
-        OnboardingScreen(onFinish = {
-            AppPrefs.setOnboardingDone(context)
-            onboardingDone = true
-        })
+        OnboardingScreen(onFinish = { onboardingDone = true })
     } else {
         LaunchedEffect(Unit) { onCaptureReady() }
         CaptureHome()

@@ -68,7 +68,7 @@ None of these requests carries your connection history.</string>
     <string name="confirm">OK</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">Hello</string>
+    <string name="onboarding_hello">Know who your device is talking to</string>
     <string name="onboarding_point_1">See your own connections</string>
     <string name="onboarding_point_2">No content read, nothing on disk</string>
     <string name="onboarding_point_3">Local analysis — online only when you query</string>

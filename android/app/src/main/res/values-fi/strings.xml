@@ -68,7 +68,7 @@ Mikään näistä pyynnöistä ei sisällä yhteystietueitasi.</string>
     <string name="confirm">OK</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">Hei</string>
+    <string name="onboarding_hello">Tiedä, kenen kanssa laitteesi puhuu</string>
     <string name="onboarding_point_1">Näe omat yhteytesi</string>
     <string name="onboarding_point_2">Sisältöä ei lueta, mitään ei jää levylle</string>
     <string name="onboarding_point_3">Paikallinen analyysi — verkossa vain kyselyn aikana</string>

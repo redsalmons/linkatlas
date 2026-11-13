@@ -68,7 +68,7 @@ Aucune de ces requêtes ne contient vos enregistrements de connexion.</string>
     <string name="confirm">OK</string>
 
     <!-- First run -->
-    <string name="onboarding_hello">Bonjour</string>
+    <string name="onboarding_hello">Sachez à qui votre appareil parle</string>
     <string name="onboarding_point_1">Voyez vos propres connexions</string>
     <string name="onboarding_point_2">Aucun contenu lu, rien sur le disque</string>
     <string name="onboarding_point_3">Analyse locale — en ligne uniquement lors d\'une requête</string>

@@ -67,7 +67,7 @@ Aucune de ces requêtes ne contient vos enregistrements de connexion.";
 "隐私政策" = "Politique de confidentialité";
 
 /* Onboarding */
-"你好" = "Bonjour";
+"知道你的设备在和谁通信" = "Sachez à qui votre appareil parle";
 "看清自己的连接" = "Voyez vos propres connexions";
 "不读内容，不落盘" = "Aucun contenu lu, rien sur le disque";
 "本地分析，主动查询才联网" = "Analyse locale — en ligne uniquement lors d'une requête";

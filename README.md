@@ -1,6 +1,6 @@
 <h1 align="center">LinkAtlas</h1>
 
-<p align="center"><strong><big>Know who your device is talking to.</big></strong></p>
+<h2 align="center">Know who your device is talking to.</h2>
 
 LinkAtlas is a privacy auditing tool for iOS and Android. It shows every
 remote endpoint your device connects to — IP, port, domain, byte counts and

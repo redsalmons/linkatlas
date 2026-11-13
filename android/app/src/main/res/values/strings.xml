@@ -1,5 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mobile Watchdog</string>
-    <string name="settings">设置</string>
+    <string name="app_name">LinkAtlas</string>
+
+    <!-- Detail pages -->
+    <string name="live_overview">Live overview</string>
+    <string name="live_overview_note">This session · updates every 3 s</string>
+    <string name="overview_connections">Connections</string>
+    <string name="overview_bytes">Traffic</string>
+    <string name="connection_map">Connection map</string>
+    <string name="connection_map_note">Where your connections land on the world map</string>
+    <string name="settings">Details</string>
+    <string name="back">Back</string>
+    <string name="communication_services">Contacted services</string>
+    <string name="website_count">%1$d services / addresses</string>
+    <string name="filtered_services">Filtered services</string>
+    <string name="filtered_services_note">%1$d connections hidden by the whitelist</string>
+    <string name="geoip_approx"> · approximate</string>
+    <string name="map_recenter">My location</string>
+    <string name="map_location_title">Location required</string>
+    <string name="map_location_body">Your position is the starting point for each map route — approximate location only, never uploaded.</string>
+    <string name="map_location_allow">Allow</string>
+    <string name="map_location_deny">Decline</string>
+    <string name="map_location_toast">Map routes need location access — enable it in Settings</string>
+    <string name="session_statistics_note">This session · updates every 3 s\nRecords live in memory only and are cleared when the VPN stops.</string>
+    <string name="connection_distribution">Service distribution</string>
+    <string name="other_websites">Other services</string>
+    <string name="connection_slice">%1$d × · %2$.1f%%</string>
+    <string name="no_connections">No connections yet</string>
+    <string name="search_domain_ip">Search domain or IP</string>
+    <string name="no_websites">No connections recorded this session</string>
+    <string name="no_matching_websites">No matching domain or IP</string>
+    <string name="domain_unlabeled">Unlabeled service</string>
+    <string name="website_connections">TCP %1$d × · UDP %2$d flows</string>
+    <string name="traffic_rank">Top traffic</string>
+    <string name="total_traffic">Total %1$s</string>
+    <string name="traffic_out_in">Up %1$s · Down %2$s</string>
+    <string name="protocol_total">%1$d connections in total</string>
+
+    <!-- Privacy page -->
+    <string name="privacy_title">Privacy &amp; data</string>
+    <string name="privacy_intro">All connection analysis happens on your phone. The app goes online only for device registration, Service insight, purchase verification, and whitelist downloads.</string>
+    <string name="privacy_collect_title">What we record</string>
+    <string name="privacy_collect_body">Destination IPs, ports, domains, per-connection byte counts, and timestamps.</string>
+    <string name="privacy_not_collect_title">What we don’t record</string>
+    <string name="privacy_not_collect_body">Message content, accounts, passwords, images, files, or browsing history.</string>
+    <string name="privacy_storage_title">Where it’s stored</string>
+    <string name="privacy_storage_body">Only in memory for this session — never written to disk. Stopping the VPN or tapping “Clear records” frees it.</string>
+    <string name="privacy_transfer_title">Network access</string>
+    <string name="privacy_transfer_body">Local connection records are never uploaded. The app only goes online in these cases:
+(1) Device registration — on first use of an online feature the app sends the platform, app version, and a device public key, verified by App Attest (iOS) / Play Integrity (Android), used only to issue access credentials;
+(2) Service insight — the single domain or IP you choose is sent to our lookup server, which forwards it to an AI model for analysis;
+(3) purchase verification — receipts are sent to the server to verify your entitlement;
+(4) whitelist — filter rules are downloaded at launch.
+None of these requests carries your connection history.</string>
+    <string name="privacy_third_party_title">Third-party SDKs</string>
+    <string name="privacy_third_party_body">No analytics, ads, or tracking. IP geolocation uses an offline database bundled in the app. Service insight is produced by an AI model that only receives the single address you queried.</string>
+    <string name="privacy_location_title">Location permission</string>
+    <string name="privacy_location_body">Approximate location only, used solely to mark your starting point on the map. Never saved or uploaded; you can revoke it in system settings anytime.</string>
+    <string name="privacy_vpn_title">VPN permission</string>
+    <string name="privacy_vpn_body">The VPN interface is the only way the system lets an app see connection metadata — its sole purpose here. Traffic is forwarded unchanged: no blocking, no modification.</string>
+    <string name="privacy_policy_link">Read the full privacy policy</string>
+    <string name="privacy_clear">Clear records</string>
+    <string name="privacy_clear_confirm_title">Clear this session’s records?</string>
+    <string name="privacy_clear_confirm_body">All connection records of the current session will be deleted and cannot be recovered. The VPN stays connected.</string>
+    <string name="privacy_cleared">Cleared</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">OK</string>
+
+    <!-- First run -->
+    <string name="onboarding_hello">Hello</string>
+    <string name="onboarding_point_1">See your own connections</string>
+    <string name="onboarding_point_2">No content read, nothing on disk</string>
+    <string name="onboarding_point_3">Local analysis — online only when you query</string>
+    <string name="onboarding_start">Get started</string>
+    <!-- Lookup -->
+    <string name="lookup_title">Connection detail</string>
+    <string name="lookup_analysis">Service insight</string>
+    <string name="lookup_consent">Querying the owner of this service sends its domain or IP to our server. No payload, full URL, or process name is uploaded.</string>
+    <string name="lookup_continue">Continue</string>
+    <string name="lookup_loading">Looking up…</string>
+    <string name="lookup_private">No further information is available for local IPs</string>
+    <string name="lookup_busy">Too many requests; try again shortly</string>
+    <string name="lookup_request_expired">This lookup expired; go back and re-enter</string>
+    <string name="lookup_purchase_needed">Purchase required to view insight</string>
+    <string name="lookup_unavailable">Lookup temporarily unavailable; retry later</string>
+    <string name="lookup_checkout_disabled">Purchases are not enabled yet</string>
+    <string name="lookup_paying">Paying…</string>
+    <string name="lookup_verifying">Verifying purchase…</string>
+    <string name="lookup_pending">Payment pending; credit arrives automatically</string>
+    <string name="lookup_expired">Purchase no longer valid</string>
+    <string name="lookup_verify_failed">Verification failed; you can retry</string>
+    <string name="lookup_single">Single lookup</string>
+    <string name="lookup_pro">Pro · Monthly</string>
+    <string name="lookup_pro_year">Pro · Yearly</string>
+    <string name="lookup_subscription_note">Pro renews monthly or yearly and can be cancelled anytime in store settings; the current period stays active</string>
+
+    <string name="lookup_retry">Retry</string>
+    <string name="lookup_restore">Restore purchases</string>
+    <string name="lookup_target">Target</string>
+    <string name="lookup_location">Location</string>
+    <string name="lookup_owner">Owner</string>
+    <string name="lookup_risk">Security</string>
+    <string name="lookup_risk_low">Low risk</string>
+    <string name="lookup_risk_medium">Medium risk</string>
+    <string name="lookup_risk_high">High risk</string>
+    <string name="lookup_risk_unknown">Unknown</string>
+    <string name="lookup_summary">Summary</string>
+    <string name="lookup_service">Service</string>
+    <string name="lookup_category">Category</string>
+    <string name="lookup_confidence">Confidence</string>
+    <string name="lookup_confidence_high">High</string>
+    <string name="lookup_confidence_medium">Medium</string>
+    <string name="lookup_confidence_low">Low</string>
+    <string name="lookup_cat_cdn">CDN</string>
+    <string name="lookup_cat_cloud">Cloud</string>
+    <string name="lookup_cat_ads">Ads</string>
+    <string name="lookup_cat_telemetry">Telemetry</string>
+    <string name="lookup_cat_social">Social</string>
+    <string name="lookup_cat_mail">Mail</string>
+    <string name="lookup_cat_streaming">Streaming</string>
+    <string name="lookup_cat_os_vendor">OS vendor</string>
+    <string name="lookup_cat_iot">IoT</string>
+    <string name="lookup_cat_dev">Developer</string>
+    <string name="lookup_cat_security">Security</string>
+    <string name="lookup_cat_other">Other</string>
+    <string name="uninstall">Uninstall</string>
+    <string name="later">Later</string>
+    <string name="legacy_app_title">Old version detected</string>
+    <string name="legacy_app_message">The older MobileWatchdog build is still installed and will steal the VPN tunnel, leaving this app with no data. Uninstall it now.</string>
+    <string name="summary">Summary</string>
+    <string name="services_summary">%1$d services · %2$d connections · %3$d filtered</string>
 </resources>

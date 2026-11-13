@@ -11,3 +11,8 @@ android/local.properties
 android/app/.cxx/
 android/**/build/
 *.iml
+*.mmdb
+
+# 内部文档（不公开）
+doc/
+ios/project.local.yml

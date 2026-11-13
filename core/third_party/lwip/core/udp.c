@@ -274,7 +274,11 @@ again:
     LWIP_DEBUGF(UDP_DEBUG, (", %"U16_F")\n", pcb->remote_port));
 
     if (pcb->pretend_netif_idx != NETIF_NO_INDEX) {
-      if ((pcb->remote_port == src) && ip_addr_cmp(&pcb->remote_ip, ip_current_src_addr())) {
+      /* A transparent flow is a full tuple, not just the App's source socket. */
+      if ((pcb->pretend_netif_idx == netif_get_index(inp)) &&
+          (pcb->remote_port == src) && (pcb->local_port == dest) &&
+          ip_addr_cmp(&pcb->remote_ip, ip_current_src_addr()) &&
+          ip_addr_cmp(&pcb->local_ip, ip_current_dest_addr())) {
         break;
       }
       prev = pcb;
@@ -390,7 +394,9 @@ again:
 #endif /* CHECKSUM_CHECK_UDP */
   }
 
-  if (for_us) {
+  /* Even an address assigned to the virtual netif needs the transparent
+   * listener when no connected PCB matched (e.g. a loopback destination). */
+  if (for_us && (pcb != NULL || !netif_is_flag_set(inp, NETIF_FLAG_PRETEND_UDP))) {
     if (pbuf_remove_header(p, UDP_HLEN)) {
       /* Can we cope with this failing? Just assert for now */
       LWIP_ASSERT("pbuf_remove_header failed", 0);
@@ -468,6 +474,8 @@ again:
           IP_ADDR_PCB_VERSION_MATCH(pcb, ip_current_dest_addr())) {
         struct udp_pcb *npcb = udp_new_ip_type(pcb->local_ip.type);
         if (npcb != NULL) {
+          ip_addr_set_ipaddr(&npcb->local_ip, ip_current_dest_addr());
+          npcb->local_port = dest;
           ip_addr_set_ipaddr(&npcb->remote_ip, ip_current_src_addr());
           npcb->remote_port = src;
           npcb->flags |= UDP_FLAGS_CONNECTED;

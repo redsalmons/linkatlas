@@ -1,0 +1,99 @@
+{
+  "identifier": "1EC9E0A4",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "13.00",
+      "familyShareable": false,
+      "internalID": "7654321001",
+      "localizations": [
+        {
+          "description": "一次付费查询，查看该服务的运营方、位置和解读。",
+          "displayName": "单次查询",
+          "locale": "zh_CN"
+        },
+        {
+          "description": "One paid lookup showing the service operator, location and analysis.",
+          "displayName": "Single Lookup",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "lookupaddress.single",
+      "referenceName": "单次查询",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_storefront": "CHN",
+    "_locale": "zh_CN"
+  },
+  "subscriptionGroups": [
+    {
+      "groupNumber": 1,
+      "id": "30A17E5B",
+      "localizations": [],
+      "name": "Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "code": "",
+          "displayPrice": "28.00",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "7654321002",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "按月订阅，不限次查询解读。",
+              "displayName": "专业版",
+              "locale": "zh_CN"
+            },
+            {
+              "description": "Monthly subscription with unlimited lookups.",
+              "displayName": "Pro",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "lookupaddress.pro",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "专业版",
+          "subscriptionGroupID": "30A17E5B",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "code": "",
+          "displayPrice": "128.00",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "7654321003",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "按年订阅，不限次查询解读。",
+              "displayName": "专业版 · 年付",
+              "locale": "zh_CN"
+            },
+            {
+              "description": "Yearly subscription with unlimited lookups.",
+              "displayName": "Pro Yearly",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "lookupaddress.pro.year",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "专业版年付",
+          "subscriptionGroupID": "30A17E5B",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 4,
+    "minor": 0,
+    "patch": 0
+  }
+}

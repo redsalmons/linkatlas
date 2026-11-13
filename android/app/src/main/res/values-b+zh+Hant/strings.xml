@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LinkAtlas</string>
+
+    <!-- Detail pages -->
+    <string name="live_overview">即時總覽</string>
+    <string name="live_overview_note">本次連線 · 每 3 秒更新</string>
+    <string name="overview_connections">連線數</string>
+    <string name="overview_bytes">流量</string>
+    <string name="connection_map">連線地圖</string>
+    <string name="connection_map_note">你的連線落在世界地圖上的位置</string>
+    <string name="settings">詳情</string>
+    <string name="back">返回</string>
+    <string name="communication_services">已連線的服務</string>
+    <string name="website_count">%1$d 個服務 / 地址</string>
+    <string name="filtered_services">已過濾的服務</string>
+    <string name="filtered_services_note">%1$d 個連線被白名單隱藏</string>
+    <string name="geoip_approx"> · 約略位置</string>
+    <string name="map_recenter">我的位置</string>
+    <string name="map_location_title">需要位置權限</string>
+    <string name="map_location_body">地圖路線以你的位置為起點，僅使用大致位置，絕不上傳。</string>
+    <string name="map_location_allow">允許</string>
+    <string name="map_location_deny">拒絕</string>
+    <string name="map_location_toast">地圖路線需要位置權限，請在設定中開啟</string>
+    <string name="session_statistics_note">本次連線 · 每 3 秒更新\n記錄只存在記憶體中，VPN 停止後即清除。</string>
+    <string name="connection_distribution">服務分佈</string>
+    <string name="other_websites">其他服務</string>
+    <string name="connection_slice">%1$d 次 · %2$.1f%%</string>
+    <string name="no_connections">暫無連線</string>
+    <string name="search_domain_ip">搜尋網域或 IP</string>
+    <string name="no_websites">本次連線尚無記錄</string>
+    <string name="no_matching_websites">沒有符合的網域或 IP</string>
+    <string name="domain_unlabeled">未標記的服務</string>
+    <string name="website_connections">TCP %1$d 次 · UDP %2$d 個串流</string>
+    <string name="traffic_rank">流量排行</string>
+    <string name="total_traffic">共 %1$s</string>
+    <string name="traffic_out_in">上傳 %1$s · 下載 %2$s</string>
+    <string name="protocol_total">共 %1$d 個連線</string>
+
+    <!-- Privacy page -->
+    <string name="privacy_title">隱私與資料</string>
+    <string name="privacy_intro">連線觀察全部在你的手機裡完成。連網僅用於裝置註冊、服務解讀、購買驗證與白名單下載。</string>
+    <string name="privacy_collect_title">我們記錄什麼</string>
+    <string name="privacy_collect_body">目標 IP、埠、網域、每個連線的位元組數和時間戳。</string>
+    <string name="privacy_not_collect_title">我們不記錄什麼</string>
+    <string name="privacy_not_collect_body">訊息內容、帳號、密碼、圖片、檔案或瀏覽記錄。</string>
+    <string name="privacy_storage_title">存在哪裡</string>
+    <string name="privacy_storage_body">只存在本次連線的記憶體中，不寫入磁碟。停止 VPN 或點「清除記錄」即釋放。</string>
+    <string name="privacy_transfer_title">連網行為</string>
+    <string name="privacy_transfer_body">本機連線記錄永不上傳。連網只發生在這幾種情況：
+① 裝置註冊——首次使用連網功能時傳送平台、應用版本與裝置公鑰，經 App Attest（iOS）/ Play Integrity（Android）驗證真實性，僅用於簽發存取憑證；
+② 服務解讀——把你選擇的那一個網域或 IP 傳送給查詢伺服器，由伺服器轉交 AI 模型分析；
+③ 購買驗證——購買憑證傳送給查詢伺服器核驗額度；
+④ 白名單——啟動時從伺服器下載過濾規則。
+這些請求都不會攜帶你的連線記錄。</string>
+    <string name="privacy_third_party_title">第三方 SDK</string>
+    <string name="privacy_third_party_body">無統計、無廣告、無埋點。IP 歸屬地使用隨安裝包內建的離線資料庫；服務解讀由 AI 模型產生，模型只會收到你查詢的那一個地址。</string>
+    <string name="privacy_location_title">位置權限</string>
+    <string name="privacy_location_body">只有大致位置，僅用於在地圖上標出你的起點，不儲存、不上傳。可隨時在系統設定中關閉。</string>
+    <string name="privacy_vpn_title">VPN 權限</string>
+    <string name="privacy_vpn_body">VPN 介面是系統唯一允許應用查看連線中繼資料的方式，也是它的唯一用途。流量原樣轉發：不阻斷、不修改。</string>
+    <string name="privacy_policy_link">閱讀完整隱私政策</string>
+    <string name="privacy_clear">清除記錄</string>
+    <string name="privacy_clear_confirm_title">清除本次連線的記錄？</string>
+    <string name="privacy_clear_confirm_body">將刪除本次連線的所有記錄且無法復原，VPN 保持連線。</string>
+    <string name="privacy_cleared">已清除</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">確定</string>
+
+    <!-- First run -->
+    <string name="onboarding_hello">你好</string>
+    <string name="onboarding_point_1">查看自己的連線</string>
+    <string name="onboarding_point_2">不讀取內容、不寫入磁碟</string>
+    <string name="onboarding_point_3">本機分析——只有查詢時才連網</string>
+    <string name="onboarding_start">開始使用</string>
+    <!-- Lookup -->
+    <string name="lookup_title">連線詳情</string>
+    <string name="lookup_analysis">服務解讀</string>
+    <string name="lookup_consent">查詢該連線的服務歸屬需要將網域或 IP 傳送給伺服器；不會上傳流量內容、完整 URL 或行程資訊。</string>
+    <string name="lookup_continue">繼續查詢</string>
+    <string name="lookup_loading">正在查詢…</string>
+    <string name="lookup_private">本機 IP 沒有更多資訊</string>
+    <string name="lookup_busy">請求過於頻繁，請稍後重試</string>
+    <string name="lookup_request_expired">該查詢已過期，請返回後重新進入</string>
+    <string name="lookup_purchase_needed">檢視解讀需要購買</string>
+    <string name="lookup_unavailable">查詢暫時不可用，請稍後重試</string>
+    <string name="lookup_checkout_disabled">購買尚未開通</string>
+    <string name="lookup_paying">支付中…</string>
+    <string name="lookup_verifying">驗證購買中…</string>
+    <string name="lookup_pending">支付處理中，稍後自動到帳</string>
+    <string name="lookup_expired">購買已失效</string>
+    <string name="lookup_verify_failed">購買驗證失敗，可重試驗證</string>
+    <string name="lookup_single">單次查詢</string>
+    <string name="lookup_pro">專業版 · 月付</string>
+    <string name="lookup_pro_year">專業版 · 年付</string>
+    <string name="lookup_subscription_note">專業版按月或按年自動續訂，可隨時在商店管理頁面取消；取消後當期仍有效</string>
+
+    <string name="lookup_retry">重試</string>
+    <string name="lookup_restore">恢復購買</string>
+    <string name="lookup_target">目標</string>
+    <string name="lookup_location">位置</string>
+    <string name="lookup_owner">營運方</string>
+    <string name="lookup_risk">安全等級</string>
+    <string name="lookup_risk_low">低風險</string>
+    <string name="lookup_risk_medium">中風險</string>
+    <string name="lookup_risk_high">高風險</string>
+    <string name="lookup_risk_unknown">未知</string>
+    <string name="lookup_summary">解讀</string>
+    <string name="lookup_service">服務</string>
+    <string name="lookup_category">分類</string>
+    <string name="lookup_confidence">可信度</string>
+    <string name="lookup_confidence_high">高</string>
+    <string name="lookup_confidence_medium">中</string>
+    <string name="lookup_confidence_low">低</string>
+    <string name="lookup_cat_cdn">CDN</string>
+    <string name="lookup_cat_cloud">雲端服務</string>
+    <string name="lookup_cat_ads">廣告</string>
+    <string name="lookup_cat_telemetry">遙測</string>
+    <string name="lookup_cat_social">社交</string>
+    <string name="lookup_cat_mail">郵件</string>
+    <string name="lookup_cat_streaming">串流媒體</string>
+    <string name="lookup_cat_os_vendor">系統廠商</string>
+    <string name="lookup_cat_iot">物聯網</string>
+    <string name="lookup_cat_dev">開發者服務</string>
+    <string name="lookup_cat_security">安全服務</string>
+    <string name="lookup_cat_other">其他</string>
+    <string name="uninstall">解除安裝</string>
+    <string name="later">稍後</string>
+    <string name="legacy_app_title">檢測到舊版本</string>
+    <string name="legacy_app_message">本機上還裝著舊版 MobileWatchdog，它會搶占 VPN 通道導致本應用收不到資料。建議立即解除安裝。</string>
+    <string name="summary">概覽</string>
+    <string name="services_summary">%1$d 個服務 · %2$d 次連線 · 已過濾 %3$d 個</string>
+</resources>

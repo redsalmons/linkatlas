@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "MobileWatchdog"
+rootProject.name = "LinkAtlas"
 include(":app")

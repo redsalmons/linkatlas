@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LinkAtlas</string>
+
+    <!-- Detail pages -->
+    <string name="live_overview">Reaaliaikainen yleiskatsaus</string>
+    <string name="live_overview_note">Tämä istunto · päivittyy 3 s välein</string>
+    <string name="overview_connections">Yhteydet</string>
+    <string name="overview_bytes">Liikenne</string>
+    <string name="connection_map">Yhteyskartta</string>
+    <string name="connection_map_note">Mihin yhteytesi sijoittuvat maailmankartalla</string>
+    <string name="settings">Tiedot</string>
+    <string name="back">Takaisin</string>
+    <string name="communication_services">Yhteydessä olevat palvelut</string>
+    <string name="website_count">%1$d palvelua / osoitetta</string>
+    <string name="filtered_services">Suodatetut palvelut</string>
+    <string name="filtered_services_note">Sallittujen luettelo piilotti %1$d yhteyttä</string>
+    <string name="geoip_approx"> · likimääräinen</string>
+    <string name="map_recenter">Oma sijainti</string>
+    <string name="map_location_title">Sijainti vaaditaan</string>
+    <string name="map_location_body">Sijaintisi on jokaisen karttareitin lähtöpiste — vain likimääräinen sijainti, ei koskaan lähetetä.</string>
+    <string name="map_location_allow">Salli</string>
+    <string name="map_location_deny">Estä</string>
+    <string name="map_location_toast">Karttareitit tarvitsevat sijaintioikeuden — ota käyttöön Asetuksissa</string>
+    <string name="session_statistics_note">Tämä istunto · päivittyy 3 s välein\nTallenteet ovat vain muistissa ja tyhjentyvät VPN:n pysähtyessä.</string>
+    <string name="connection_distribution">Palvelujen jakauma</string>
+    <string name="other_websites">Muut palvelut</string>
+    <string name="connection_slice">%1$d × · %2$.1f%%</string>
+    <string name="no_connections">Ei yhteyksiä vielä</string>
+    <string name="search_domain_ip">Hae verkkotunnusta tai IP:tä</string>
+    <string name="no_websites">Ei tallennettuja yhteyksiä tässä istunnossa</string>
+    <string name="no_matching_websites">Ei vastaavaa verkkotunnusta tai IP:tä</string>
+    <string name="domain_unlabeled">Tunnistamaton palvelu</string>
+    <string name="website_connections">TCP %1$d × · UDP %2$d virtaa</string>
+    <string name="traffic_rank">Suurin liikenne</string>
+    <string name="total_traffic">Yhteensä %1$s</string>
+    <string name="traffic_out_in">Lähetetty %1$s · Vastaanotettu %2$s</string>
+    <string name="protocol_total">Yhteensä %1$d yhteyttä</string>
+
+    <!-- Privacy page -->
+    <string name="privacy_title">Yksityisyys ja tiedot</string>
+    <string name="privacy_intro">Kaikki yhteysanalyysi tapahtuu laitteellasi. Sovellus käyttää verkkoa vain laiterekisteröintiin, palveluanalyysiin, ostojen varmistukseen ja sallittujen listan lataamiseen.</string>
+    <string name="privacy_collect_title">Mitä tallennamme</string>
+    <string name="privacy_collect_body">Kohde-IP:t, portit, verkkotunnukset, tavumäärät yhteyttä kohden ja aikaleimat.</string>
+    <string name="privacy_not_collect_title">Mitä emme tallenna</string>
+    <string name="privacy_not_collect_body">Viestien sisältöä, tilejä, salasanoja, kuvia, tiedostoja tai selaushistoriaa.</string>
+    <string name="privacy_storage_title">Missä tiedot säilyvät</string>
+    <string name="privacy_storage_body">Vain tämän istunnon muistissa — ei koskaan levylle. VPN:n pysäyttäminen tai «Tyhjennä tallenteet» -napin painaminen vapauttaa ne.</string>
+    <string name="privacy_transfer_title">Verkkoyhteys</string>
+    <string name="privacy_transfer_body">Paikallisia yhteystietueita ei koskaan lähetetä. Sovellus käyttää verkkoa vain näissä tapauksissa:
+(1) Laiterekisteröinti — online-ominaisuuden ensimmäisellä käyttökerralla sovellus lähettää alustan, sovellusversion ja laitteen julkisen avaimen, jotka varmennetaan App Attestillä (iOS) / Play Integrity\'llä (Android); niitä käytetään vain pääsytunnusten myöntämiseen;
+(2) Palveluanalyysi — valitsemasi yksittäinen verkkotunnus tai IP lähetetään hakupalvelimelle, joka välittää sen AI-mallille analysoitavaksi;
+(3) Ostojen varmistus — kuitit lähetetään palvelimelle oikeutesi varmistamiseksi;
+(4) Sallittujen lista — suodatinsäännöt ladataan palvelimelta käynnistyksessä.
+Mikään näistä pyynnöistä ei sisällä yhteystietueitasi.</string>
+    <string name="privacy_third_party_title">Kolmannen osapuolen SDK:t</string>
+    <string name="privacy_third_party_body">Ei analytiikkaa, mainontaa tai seurantaa. IP-paikannus käyttää sovellukseen sisältyvää offline-tietokantaa. Palveluanalyysin tuottaa tekoälymalli, joka saa vain kysellyn yksittäisen osoitteen.</string>
+    <string name="privacy_location_title">Sijaintioikeus</string>
+    <string name="privacy_location_body">Vain likimääräinen sijainti, käytetään ainoastaan lähtöpisteesi merkitsemiseen kartalle. Ei tallenneta eikä lähetetä; voit peruuttaa milloin tahansa järjestelmän asetuksista.</string>
+    <string name="privacy_vpn_title">VPN-oikeus</string>
+    <string name="privacy_vpn_body">VPN-rajapinta on ainoa tapa, jolla järjestelmä sallii sovelluksen nähdä yhteysmetatiedot — sen ainoa tarkoitus tässä. Liikenne välitetään muuttumattomana: ei estoa, ei muokkausta.</string>
+    <string name="privacy_policy_link">Lue koko tietosuojakäytäntö</string>
+    <string name="privacy_clear">Tyhjennä tallenteet</string>
+    <string name="privacy_clear_confirm_title">Tyhjennetäänkö tämän istunnon tallenteet?</string>
+    <string name="privacy_clear_confirm_body">Kaikki nykyisen istunnon yhteystallenteet poistetaan eikä niitä voi palauttaa. VPN pysyy yhdistettynä.</string>
+    <string name="privacy_cleared">Tyhjennetty</string>
+    <string name="cancel">Peruuta</string>
+    <string name="confirm">OK</string>
+
+    <!-- First run -->
+    <string name="onboarding_hello">Hei</string>
+    <string name="onboarding_point_1">Näe omat yhteytesi</string>
+    <string name="onboarding_point_2">Sisältöä ei lueta, mitään ei jää levylle</string>
+    <string name="onboarding_point_3">Paikallinen analyysi — verkossa vain kyselyn aikana</string>
+    <string name="onboarding_start">Aloita</string>
+    <!-- Lookup -->
+    <string name="lookup_title">Yhteyden tiedot</string>
+    <string name="lookup_analysis">Palveluanalyysi</string>
+    <string name="lookup_consent">Tämän palvelun ylläpitäjän selvittäminen lähettää sen verkkotunnuksen tai IP:n palvelimellemme. Sisältöä, täyttä URL:ia tai prosessin nimeä ei lähetetä.</string>
+    <string name="lookup_continue">Jatka</string>
+    <string name="lookup_loading">Haetaan…</string>
+    <string name="lookup_private">Paikallisille IP-osoitteille ei ole lisätietoja</string>
+    <string name="lookup_busy">Liikaa pyyntöjä; yritä pian uudelleen</string>
+    <string name="lookup_request_expired">Tämä haku vanheni; palaa takaisin ja yritä uudelleen</string>
+    <string name="lookup_purchase_needed">Analyysin katsominen vaatii ostoksen</string>
+    <string name="lookup_unavailable">Haku ei ole tilapäisesti saatavilla; yritä myöhemmin uudelleen</string>
+    <string name="lookup_checkout_disabled">Ostoksia ei ole vielä käytössä</string>
+    <string name="lookup_paying">Maksetaan…</string>
+    <string name="lookup_verifying">Varmennetaan ostoa…</string>
+    <string name="lookup_pending">Maksu odottaa; hyvitys saapuu automaattisesti</string>
+    <string name="lookup_expired">Osto ei ole enää voimassa</string>
+    <string name="lookup_verify_failed">Vahvistus epäonnistui; voit yrittää uudelleen</string>
+    <string name="lookup_single">Yksittäinen haku</string>
+    <string name="lookup_pro">Pro · Kuukausittain</string>
+    <string name="lookup_pro_year">Pro · Vuosittain</string>
+    <string name="lookup_subscription_note">Pro uusiutuu kuukausittain tai vuosittain ja sen voi perua milloin tahansa kaupan asetuksista; käynnissä oleva jakso pysyy voimassa</string>
+
+    <string name="lookup_retry">Yritä uudelleen</string>
+    <string name="lookup_restore">Palauta ostot</string>
+    <string name="lookup_target">Kohde</string>
+    <string name="lookup_location">Sijainti</string>
+    <string name="lookup_owner">Ylläpitäjä</string>
+    <string name="lookup_risk">Turvallisuus</string>
+    <string name="lookup_risk_low">Matala riski</string>
+    <string name="lookup_risk_medium">Keskitason riski</string>
+    <string name="lookup_risk_high">Korkea riski</string>
+    <string name="lookup_risk_unknown">Tuntematon</string>
+    <string name="lookup_summary">Yhteenveto</string>
+    <string name="lookup_service">Palvelu</string>
+    <string name="lookup_category">Luokka</string>
+    <string name="lookup_confidence">Luotettavuus</string>
+    <string name="lookup_confidence_high">Korkea</string>
+    <string name="lookup_confidence_medium">Keskitaso</string>
+    <string name="lookup_confidence_low">Matala</string>
+    <string name="lookup_cat_cdn">CDN</string>
+    <string name="lookup_cat_cloud">Pilvi</string>
+    <string name="lookup_cat_ads">Mainonta</string>
+    <string name="lookup_cat_telemetry">Telemetria</string>
+    <string name="lookup_cat_social">Sosiaalinen media</string>
+    <string name="lookup_cat_mail">Sähköposti</string>
+    <string name="lookup_cat_streaming">Suoratoisto</string>
+    <string name="lookup_cat_os_vendor">Käyttöjärjestelmätoimittaja</string>
+    <string name="lookup_cat_iot">IoT</string>
+    <string name="lookup_cat_dev">Kehittäjäpalvelut</string>
+    <string name="lookup_cat_security">Tietoturva</string>
+    <string name="lookup_cat_other">Muu</string>
+    <string name="uninstall">Poista asennus</string>
+    <string name="later">Myöhemmin</string>
+    <string name="legacy_app_title">Vanha versio havaittu</string>
+    <string name="legacy_app_message">Vanhempi MobileWatchdog-versio on edelleen asennettuna ja se ottaa VPN-tunnelin hallintaansa, jolloin tämä sovellus ei saa dataa. Poista se nyt.</string>
+    <string name="summary">Yhteenveto</string>
+    <string name="services_summary">%1$d palvelua · %2$d yhteyttä · %3$d suodatettu</string>
+</resources>

@@ -1,4 +1,9 @@
-name: MobileWatchdog
+name: LinkAtlas
+include:
+  - path: project.local.yml
+    optional: true
+attributes:
+  knownRegions: [en, zh-Hans, zh-Hant, ja, de, fr, it, fi, ru]
 options:
   bundleIdPrefix: com.redsalmons
   deploymentTarget:
@@ -8,35 +13,52 @@ settings:
   base:
     SWIFT_VERSION: "5.0"
     CODE_SIGN_STYLE: Automatic
-    DEVELOPMENT_TEAM: ""  # set your Apple Developer Team ID to run on a device
     MARKETING_VERSION: "0.1.0"
     CURRENT_PROJECT_VERSION: "1"
-packages:
-  MapLibre:
-    url: https://github.com/maplibre/maplibre-gl-native-distribution
-    exactVersion: 7.0.0
 targets:
-  MobileWatchdog:
+  LinkAtlas:
     type: application
     platform: iOS
-    sources: [App]
+    sources:
+      - App
+      - ../third_party/libmaxminddb/src
+      - path: ../third_party/geoip
+        excludes: [data, README.md]
+      - path: ../third_party/geoip/data/city-names.tsv
+        buildPhase: resources
     info:
       path: App/Info.plist
       properties:
-        CFBundleDisplayName: Mobile Watchdog
+        CFBundleDevelopmentRegion: en
+        CFBundleDisplayName: 连线图志
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
-        NSLocationWhenInUseUsageDescription: 在地图上显示你当前的位置
+        NSLocationWhenInUseUsageDescription: 仅用于在地图上标出你的起点，不保存、不上传
+        LookupServiceURL: https://app.freedomsalmon.com
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
     entitlements:
-      path: App/MobileWatchdog.entitlements
+      path: App/LinkAtlas.entitlements
       properties:
         com.apple.developer.networking.networkextension: [packet-tunnel-provider]
+        com.apple.developer.devicecheck.appattest-environment: "$(APP_ATTEST_ENVIRONMENT)"
     settings:
+      configs:
+        Debug:
+          APP_ATTEST_ENVIRONMENT: development
+        Release:
+          APP_ATTEST_ENVIRONMENT: production
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.redsalmons.mobilewatchdog
+        PRODUCT_BUNDLE_IDENTIFIER: com.redsalmons.linkatlas
+        SWIFT_OBJC_BRIDGING_HEADER: App/App-Bridging-Header.h
+        USE_HEADERMAP: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        HEADER_SEARCH_PATHS:
+          - "$(SRCROOT)/../third_party/libmaxminddb/include"
+          - "$(SRCROOT)/../third_party/libmaxminddb/src"
+          - "$(SRCROOT)/../third_party/geoip"
     dependencies:
       - target: PacketTunnel
-      - package: MapLibre
   PacketTunnel:
     type: app-extension
     platform: iOS
@@ -50,7 +72,8 @@ targets:
     info:
       path: PacketTunnel/Info.plist
       properties:
-        CFBundleDisplayName: Mobile Watchdog Tunnel
+        CFBundleDevelopmentRegion: en
+        CFBundleDisplayName: 连线图志 Tunnel
         NSExtension:
           NSExtensionPointIdentifier: com.apple.networkextension.packet-tunnel
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PacketTunnelProvider
@@ -59,10 +82,15 @@ targets:
       properties:
         com.apple.developer.networking.networkextension: [packet-tunnel-provider]
     settings:
+      configs:
+        Debug:
+          GCC_PREPROCESSOR_DEFINITIONS: ["$(inherited)", "LINKATLAS_DPI_LOG=1"]
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.redsalmons.mobilewatchdog.tunnel
+        PRODUCT_BUNDLE_IDENTIFIER: com.redsalmons.linkatlas.tunnel
+        OTHER_LDFLAGS: ["$(inherited)", "-lresolv"]
         SWIFT_OBJC_BRIDGING_HEADER: PacketTunnel/PacketTunnel-Bridging-Header.h
         USE_HEADERMAP: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         HEADER_SEARCH_PATHS:
           - "$(SRCROOT)/../core/src"
           - "$(SRCROOT)/../core/include"
@@ -71,3 +99,11 @@ targets:
         CLANG_CXX_LANGUAGE_STANDARD: c++17
         GCC_C_LANGUAGE_STANDARD: gnu11
         CLANG_ENABLE_MODULES: NO  # lwIP and Darwin both define struct ip6_hdr; modules reject that
+schemes:
+  LinkAtlas:
+    build:
+      targets:
+        LinkAtlas: all
+    run:
+      config: Debug
+      storeKitConfiguration: App/LinkAtlas.storekit

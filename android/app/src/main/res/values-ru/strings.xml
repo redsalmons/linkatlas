@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LinkAtlas</string>
+
+    <!-- Detail pages -->
+    <string name="live_overview">Обзор в реальном времени</string>
+    <string name="live_overview_note">Эта сессия · обновление каждые 3 с</string>
+    <string name="overview_connections">Соединения</string>
+    <string name="overview_bytes">Трафик</string>
+    <string name="connection_map">Карта соединений</string>
+    <string name="connection_map_note">Где на карте мира находятся ваши соединения</string>
+    <string name="settings">Подробнее</string>
+    <string name="back">Назад</string>
+    <string name="communication_services">Обслуживаемые сервисы</string>
+    <string name="website_count">%1$d сервисов / адресов</string>
+    <string name="filtered_services">Отфильтрованные сервисы</string>
+    <string name="filtered_services_note">%1$d соединений скрыто белым списком</string>
+    <string name="geoip_approx"> · приблизительно</string>
+    <string name="map_recenter">Моё местоположение</string>
+    <string name="map_location_title">Требуется местоположение</string>
+    <string name="map_location_body">Ваше местоположение — начальная точка каждого маршрута на карте. Только приблизительное, никогда не отправляется.</string>
+    <string name="map_location_allow">Разрешить</string>
+    <string name="map_location_deny">Отклонить</string>
+    <string name="map_location_toast">Для маршрутов на карте нужен доступ к местоположению — включите его в настройках</string>
+    <string name="session_statistics_note">Эта сессия · обновление каждые 3 с\nЗаписи хранятся только в памяти и очищаются при остановке VPN.</string>
+    <string name="connection_distribution">Распределение сервисов</string>
+    <string name="other_websites">Другие сервисы</string>
+    <string name="connection_slice">%1$d × · %2$.1f%%</string>
+    <string name="no_connections">Пока нет соединений</string>
+    <string name="search_domain_ip">Поиск домена или IP</string>
+    <string name="no_websites">В этой сессии нет записанных соединений</string>
+    <string name="no_matching_websites">Нет подходящего домена или IP</string>
+    <string name="domain_unlabeled">Неизвестный сервис</string>
+    <string name="website_connections">TCP %1$d × · UDP %2$d потоков</string>
+    <string name="traffic_rank">Основной трафик</string>
+    <string name="total_traffic">Всего %1$s</string>
+    <string name="traffic_out_in">Исходящий %1$s · Входящий %2$s</string>
+    <string name="protocol_total">Всего %1$d соединений</string>
+
+    <!-- Privacy page -->
+    <string name="privacy_title">Конфиденциальность и данные</string>
+    <string name="privacy_intro">Весь анализ подключений выполняется на вашем устройстве. Приложение выходит в сеть только для регистрации устройства, анализа сервиса, проверки покупок и загрузки белого списка.</string>
+    <string name="privacy_collect_title">Что мы записываем</string>
+    <string name="privacy_collect_body">Целевые IP, порты, домены, объём байт на соединение и метки времени.</string>
+    <string name="privacy_not_collect_title">Что мы не записываем</string>
+    <string name="privacy_not_collect_body">Содержимое сообщений, аккаунты, пароли, изображения, файлы или историю просмотров.</string>
+    <string name="privacy_storage_title">Где хранится</string>
+    <string name="privacy_storage_body">Только в памяти на время этой сессии — на диск не записывается. Остановка VPN или нажатие «Очистить записи» освобождает данные.</string>
+    <string name="privacy_transfer_title">Доступ к сети</string>
+    <string name="privacy_transfer_body">Локальные записи о подключениях никогда не выгружаются. Приложение выходит в сеть только в этих случаях:
+(1) Регистрация устройства — при первом использовании онлайн-функции приложение отправляет платформу, версию приложения и открытый ключ устройства, проверяемые через App Attest (iOS) / Play Integrity (Android); они используются только для выдачи учётных данных доступа;
+(2) Анализ сервиса — выбранный вами один домен или IP отправляется на наш сервер поиска, который передаёт его ИИ-модели для анализа;
+(3) Проверка покупок — чеки отправляются на сервер для подтверждения ваших прав;
+(4) Белый список — правила фильтрации загружаются с сервера при запуске.
+Ни один из этих запросов не содержит ваших записей о подключениях.</string>
+    <string name="privacy_third_party_title">Сторонние SDK</string>
+    <string name="privacy_third_party_body">Нет аналитики, рекламы или отслеживания. Геолокация IP использует офлайн-базу данных внутри приложения. Анализ сервиса создаётся AI-моделью, которая получает только один запрошенный адрес.</string>
+    <string name="privacy_location_title">Разрешение на местоположение</string>
+    <string name="privacy_location_body">Только приблизительное местоположение, используется исключительно для обозначения вашей начальной точки на карте. Не сохраняется и не отправляется; отозвать можно в любое время в настройках системы.</string>
+    <string name="privacy_vpn_title">Разрешение VPN</string>
+    <string name="privacy_vpn_body">Интерфейс VPN — единственный способ, которым система позволяет приложению видеть метаданные соединений, и его единственная цель здесь. Трафик передаётся без изменений: без блокировок и модификаций.</string>
+    <string name="privacy_policy_link">Читать политику конфиденциальности</string>
+    <string name="privacy_clear">Очистить записи</string>
+    <string name="privacy_clear_confirm_title">Очистить записи этой сессии?</string>
+    <string name="privacy_clear_confirm_body">Все записи соединений текущей сессии будут удалены и не могут быть восстановлены. VPN остаётся подключённым.</string>
+    <string name="privacy_cleared">Очищено</string>
+    <string name="cancel">Отмена</string>
+    <string name="confirm">ОК</string>
+
+    <!-- First run -->
+    <string name="onboarding_hello">Здравствуйте</string>
+    <string name="onboarding_point_1">Смотрите свои соединения</string>
+    <string name="onboarding_point_2">Содержимое не читается, на диске ничего не остаётся</string>
+    <string name="onboarding_point_3">Локальный анализ — в сети только при запросе</string>
+    <string name="onboarding_start">Начать</string>
+    <!-- Lookup -->
+    <string name="lookup_title">Детали соединения</string>
+    <string name="lookup_analysis">Анализ сервиса</string>
+    <string name="lookup_consent">Для запроса владельца этого сервиса его домен или IP отправляется на наш сервер. Содержимое, полный URL или имя процесса не отправляются.</string>
+    <string name="lookup_continue">Продолжить</string>
+    <string name="lookup_loading">Поиск…</string>
+    <string name="lookup_private">Для локальных IP дополнительной информации нет</string>
+    <string name="lookup_busy">Слишком много запросов; повторите через некоторое время</string>
+    <string name="lookup_request_expired">Этот запрос истёк; вернитесь и введите заново</string>
+    <string name="lookup_purchase_needed">Для просмотра анализа требуется покупка</string>
+    <string name="lookup_unavailable">Поиск временно недоступен; повторите позже</string>
+    <string name="lookup_checkout_disabled">Покупки ещё не включены</string>
+    <string name="lookup_paying">Оплата…</string>
+    <string name="lookup_verifying">Проверка покупки…</string>
+    <string name="lookup_pending">Платёж в обработке; начисление произойдёт автоматически</string>
+    <string name="lookup_expired">Покупка больше не действительна</string>
+    <string name="lookup_verify_failed">Проверка не удалась; можно повторить</string>
+    <string name="lookup_single">Один запрос</string>
+    <string name="lookup_pro">Pro · Ежемесячно</string>
+    <string name="lookup_pro_year">Pro · Ежегодно</string>
+    <string name="lookup_subscription_note">Pro продлевается ежемесячно или ежегодно, отменить можно в любой момент в настройках магазина; текущий период остаётся активным</string>
+
+    <string name="lookup_retry">Повторить</string>
+    <string name="lookup_restore">Восстановить покупки</string>
+    <string name="lookup_target">Цель</string>
+    <string name="lookup_location">Местоположение</string>
+    <string name="lookup_owner">Оператор</string>
+    <string name="lookup_risk">Безопасность</string>
+    <string name="lookup_risk_low">Низкий риск</string>
+    <string name="lookup_risk_medium">Средний риск</string>
+    <string name="lookup_risk_high">Высокий риск</string>
+    <string name="lookup_risk_unknown">Неизвестно</string>
+    <string name="lookup_summary">Резюме</string>
+    <string name="lookup_service">Сервис</string>
+    <string name="lookup_category">Категория</string>
+    <string name="lookup_confidence">Уверенность</string>
+    <string name="lookup_confidence_high">Высокая</string>
+    <string name="lookup_confidence_medium">Средняя</string>
+    <string name="lookup_confidence_low">Низкая</string>
+    <string name="lookup_cat_cdn">CDN</string>
+    <string name="lookup_cat_cloud">Облако</string>
+    <string name="lookup_cat_ads">Реклама</string>
+    <string name="lookup_cat_telemetry">Телеметрия</string>
+    <string name="lookup_cat_social">Соцсети</string>
+    <string name="lookup_cat_mail">Почта</string>
+    <string name="lookup_cat_streaming">Стриминг</string>
+    <string name="lookup_cat_os_vendor">Производитель ОС</string>
+    <string name="lookup_cat_iot">IoT</string>
+    <string name="lookup_cat_dev">Сервисы для разработчиков</string>
+    <string name="lookup_cat_security">Безопасность</string>
+    <string name="lookup_cat_other">Другое</string>
+    <string name="uninstall">Удалить</string>
+    <string name="later">Позже</string>
+    <string name="legacy_app_title">Обнаружена старая версия</string>
+    <string name="legacy_app_message">Старая сборка MobileWatchdog всё ещё установлена и захватит VPN-туннель, из-за чего это приложение не получит данные. Удалите её сейчас.</string>
+    <string name="summary">Сводка</string>
+    <string name="services_summary">%1$d сервисов · %2$d соединений · %3$d отфильтровано</string>
+</resources>

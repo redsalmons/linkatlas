@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LinkAtlas</string>
+
+    <!-- Detail pages -->
+    <string name="live_overview">Live-Übersicht</string>
+    <string name="live_overview_note">Diese Sitzung · Aktualisierung alle 3 s</string>
+    <string name="overview_connections">Verbindungen</string>
+    <string name="overview_bytes">Datenverkehr</string>
+    <string name="connection_map">Verbindungskarte</string>
+    <string name="connection_map_note">Wo Ihre Verbindungen auf der Weltkarte landen</string>
+    <string name="settings">Details</string>
+    <string name="back">Zurück</string>
+    <string name="communication_services">Kontaktierte Dienste</string>
+    <string name="website_count">%1$d Dienste / Adressen</string>
+    <string name="filtered_services">Gefilterte Dienste</string>
+    <string name="filtered_services_note">%1$d Verbindungen durch die Whitelist ausgeblendet</string>
+    <string name="geoip_approx"> · ungefähr</string>
+    <string name="map_recenter">Mein Standort</string>
+    <string name="map_location_title">Standort erforderlich</string>
+    <string name="map_location_body">Ihr Standort ist der Ausgangspunkt jeder Kartenroute – nur ungefährer Standort, niemals hochgeladen.</string>
+    <string name="map_location_allow">Erlauben</string>
+    <string name="map_location_deny">Ablehnen</string>
+    <string name="map_location_toast">Kartenrouten benötigen Standortzugriff – in den Einstellungen aktivieren</string>
+    <string name="session_statistics_note">Diese Sitzung · Aktualisierung alle 3 s\nAufzeichnungen liegen nur im Arbeitsspeicher und werden beim Stoppen des VPN gelöscht.</string>
+    <string name="connection_distribution">Dienstverteilung</string>
+    <string name="other_websites">Andere Dienste</string>
+    <string name="connection_slice">%1$d × · %2$.1f%%</string>
+    <string name="no_connections">Noch keine Verbindungen</string>
+    <string name="search_domain_ip">Domain oder IP suchen</string>
+    <string name="no_websites">Keine Verbindungen in dieser Sitzung aufgezeichnet</string>
+    <string name="no_matching_websites">Keine passende Domain oder IP</string>
+    <string name="domain_unlabeled">Unbekannter Dienst</string>
+    <string name="website_connections">TCP %1$d × · UDP %2$d Flüsse</string>
+    <string name="traffic_rank">Top-Datenverkehr</string>
+    <string name="total_traffic">Gesamt %1$s</string>
+    <string name="traffic_out_in">Up %1$s · Down %2$s</string>
+    <string name="protocol_total">Insgesamt %1$d Verbindungen</string>
+
+    <!-- Privacy page -->
+    <string name="privacy_title">Datenschutz &amp; Daten</string>
+    <string name="privacy_intro">Die gesamte Verbindungsanalyse findet auf deinem Gerät statt. Die App geht nur für Geräteregistrierung, Service-Einblick, Kaufbestätigung und Whitelist-Downloads online.</string>
+    <string name="privacy_collect_title">Was wir aufzeichnen</string>
+    <string name="privacy_collect_body">Ziel-IPs, Ports, Domains, Bytezahlen pro Verbindung und Zeitstempel.</string>
+    <string name="privacy_not_collect_title">Was wir nicht aufzeichnen</string>
+    <string name="privacy_not_collect_body">Nachrichteninhalte, Konten, Passwörter, Bilder, Dateien oder Browserverlauf.</string>
+    <string name="privacy_storage_title">Wo sie gespeichert werden</string>
+    <string name="privacy_storage_body">Nur im Arbeitsspeicher für diese Sitzung – nie auf die Festplatte geschrieben. Beim Stoppen des VPN oder Tippen auf „Aufzeichnungen löschen" wird der Speicher freigegeben.</string>
+    <string name="privacy_transfer_title">Netzwerkzugriff</string>
+    <string name="privacy_transfer_body">Lokale Verbindungsdaten werden niemals hochgeladen. Die App geht nur in diesen Fällen online:
+(1) Geräteregistrierung — bei der ersten Nutzung einer Online-Funktion sendet die App Plattform, App-Version und einen öffentlichen Geräteschlüssel, verifiziert durch App Attest (iOS) / Play Integrity (Android); dies dient nur zum Ausstellen von Zugangsdaten;
+(2) Service-Einblick — die einzelne Domain oder IP, die du auswählst, wird an unseren Lookup-Server gesendet, der sie zur Analyse an ein KI-Modell weiterleitet;
+(3) Kaufbestätigung — Belege werden zur Verifizierung deines Anspruchs an den Server gesendet;
+(4) Whitelist — Filterregeln werden beim Start vom Server heruntergeladen.
+Keine dieser Anfragen enthält deine Verbindungsdaten.</string>
+    <string name="privacy_third_party_title">Drittanbieter-SDKs</string>
+    <string name="privacy_third_party_body">Keine Analysen, Werbung oder Tracking. Die IP-Geolokalisierung verwendet eine in der App gebündelte Offline-Datenbank. Die Dienstanalyse wird von einem KI-Modell erstellt, das nur die einzelne abgefragte Adresse erhält.</string>
+    <string name="privacy_location_title">Standortberechtigung</string>
+    <string name="privacy_location_body">Nur ungefährer Standort, ausschließlich zur Markierung Ihres Ausgangspunkts auf der Karte. Nie gespeichert oder hochgeladen; in den Systemeinstellungen jederzeit widerrufbar.</string>
+    <string name="privacy_vpn_title">VPN-Berechtigung</string>
+    <string name="privacy_vpn_body">Die VPN-Schnittstelle ist die einzige Möglichkeit des Systems, einer App Verbindungsmetadaten einzusehen – ihr einziger Zweck hier. Der Datenverkehr wird unverändert weitergeleitet: kein Blockieren, keine Änderung.</string>
+    <string name="privacy_policy_link">Vollständige Datenschutzerklärung lesen</string>
+    <string name="privacy_clear">Aufzeichnungen löschen</string>
+    <string name="privacy_clear_confirm_title">Aufzeichnungen dieser Sitzung löschen?</string>
+    <string name="privacy_clear_confirm_body">Alle Verbindungsaufzeichnungen der aktuellen Sitzung werden gelöscht und können nicht wiederhergestellt werden. Das VPN bleibt verbunden.</string>
+    <string name="privacy_cleared">Gelöscht</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="confirm">OK</string>
+
+    <!-- First run -->
+    <string name="onboarding_hello">Hallo</string>
+    <string name="onboarding_point_1">Sehen Sie Ihre eigenen Verbindungen</string>
+    <string name="onboarding_point_2">Kein Lesen von Inhalten, nichts auf der Festplatte</string>
+    <string name="onboarding_point_3">Lokale Analyse – nur online bei Abfrage</string>
+    <string name="onboarding_start">Los geht\'s</string>
+    <!-- Lookup -->
+    <string name="lookup_title">Verbindungsdetails</string>
+    <string name="lookup_analysis">Dienstanalyse</string>
+    <string name="lookup_consent">Zum Abfragen des Betreibers dieses Dienstes wird dessen Domain oder IP an unseren Server gesendet. Es werden keine Nutzdaten, vollständige URLs oder Prozessnamen hochgeladen.</string>
+    <string name="lookup_continue">Weiter</string>
+    <string name="lookup_loading">Suche läuft…</string>
+    <string name="lookup_private">Für lokale IPs sind keine weiteren Informationen verfügbar</string>
+    <string name="lookup_busy">Zu viele Anfragen; bitte gleich erneut versuchen</string>
+    <string name="lookup_request_expired">Diese Abfrage ist abgelaufen; zurückgehen und erneut eingeben</string>
+    <string name="lookup_purchase_needed">Kauf erforderlich, um die Analyse anzuzeigen</string>
+    <string name="lookup_unavailable">Abfrage vorübergehend nicht verfügbar; später erneut versuchen</string>
+    <string name="lookup_checkout_disabled">Käufe sind noch nicht aktiviert</string>
+    <string name="lookup_paying">Zahlung läuft…</string>
+    <string name="lookup_verifying">Kauf wird überprüft…</string>
+    <string name="lookup_pending">Zahlung ausstehend; Gutschrift erfolgt automatisch</string>
+    <string name="lookup_expired">Kauf nicht mehr gültig</string>
+    <string name="lookup_verify_failed">Überprüfung fehlgeschlagen; erneut versuchen möglich</string>
+    <string name="lookup_single">Einzelsuche</string>
+    <string name="lookup_pro">Pro · Monatlich</string>
+    <string name="lookup_pro_year">Pro · Jährlich</string>
+    <string name="lookup_subscription_note">Pro verlängert sich monatlich oder jährlich und kann jederzeit in den Store-Einstellungen gekündigt werden; der laufende Zeitraum bleibt aktiv</string>
+
+    <string name="lookup_retry">Wiederholen</string>
+    <string name="lookup_restore">Käufe wiederherstellen</string>
+    <string name="lookup_target">Ziel</string>
+    <string name="lookup_location">Standort</string>
+    <string name="lookup_owner">Betreiber</string>
+    <string name="lookup_risk">Sicherheit</string>
+    <string name="lookup_risk_low">Niedriges Risiko</string>
+    <string name="lookup_risk_medium">Mittleres Risiko</string>
+    <string name="lookup_risk_high">Hohes Risiko</string>
+    <string name="lookup_risk_unknown">Unbekannt</string>
+    <string name="lookup_summary">Zusammenfassung</string>
+    <string name="lookup_service">Dienst</string>
+    <string name="lookup_category">Kategorie</string>
+    <string name="lookup_confidence">Vertrauenswürdigkeit</string>
+    <string name="lookup_confidence_high">Hoch</string>
+    <string name="lookup_confidence_medium">Mittel</string>
+    <string name="lookup_confidence_low">Niedrig</string>
+    <string name="lookup_cat_cdn">CDN</string>
+    <string name="lookup_cat_cloud">Cloud</string>
+    <string name="lookup_cat_ads">Werbung</string>
+    <string name="lookup_cat_telemetry">Telemetrie</string>
+    <string name="lookup_cat_social">Soziale Netzwerke</string>
+    <string name="lookup_cat_mail">E-Mail</string>
+    <string name="lookup_cat_streaming">Streaming</string>
+    <string name="lookup_cat_os_vendor">OS-Anbieter</string>
+    <string name="lookup_cat_iot">IoT</string>
+    <string name="lookup_cat_dev">Entwicklerdienste</string>
+    <string name="lookup_cat_security">Sicherheitsdienste</string>
+    <string name="lookup_cat_other">Sonstiges</string>
+    <string name="uninstall">Deinstallieren</string>
+    <string name="later">Später</string>
+    <string name="legacy_app_title">Alte Version erkannt</string>
+    <string name="legacy_app_message">Der ältere MobileWatchdog-Build ist noch installiert und wird den VPN-Tunnel übernehmen, sodass diese App keine Daten erhält. Jetzt deinstallieren.</string>
+    <string name="summary">Zusammenfassung</string>
+    <string name="services_summary">%1$d Dienste · %2$d Verbindungen · %3$d gefiltert</string>
+</resources>

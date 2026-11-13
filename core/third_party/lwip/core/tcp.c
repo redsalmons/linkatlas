@@ -49,7 +49,7 @@
  * -------------------
  * When a connection is idle (i.e., no data is either transmitted or
  * received), lwIP will repeatedly poll the application by calling a
- * specified callback function. This can be used either as a watchdog
+ * specified callback function. This can be used either as a linkatlas
  * timer for killing connections that have stayed idle for too long, or
  * as a method of waiting for memory to become available. For instance,
  * if a call to tcp_write() has failed because memory wasn't available,
@@ -2175,7 +2175,7 @@ tcp_accept(struct tcp_pcb *pcb, tcp_accept_fn accept)
  *
  * When a connection is idle (i.e., no data is either transmitted or
  * received), lwIP will repeatedly poll the application by calling a
- * specified callback function. This can be used either as a watchdog
+ * specified callback function. This can be used either as a linkatlas
  * timer for killing connections that have stayed idle for too long, or
  * as a method of waiting for memory to become available. For instance,
  * if a call to tcp_write() has failed because memory wasn't available,

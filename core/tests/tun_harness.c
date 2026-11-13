@@ -11,10 +11,10 @@
 #include <time.h>
 #include <unistd.h>
 
-#include "watchdog/analyzer.h"
-#include "watchdog/tunnel.h"
+#include "linkatlas/analyzer.h"
+#include "linkatlas/tunnel.h"
 
-static unsigned long hooked[2];
+static unsigned long packets, stream_bytes[2], stream_ends[2], datagrams[2];
 static volatile sig_atomic_t stop;
 
 static void on_signal(int sig) {
@@ -27,9 +27,15 @@ static void on_output(void *ctx, const uint8_t *packet, size_t len) {
     (void)n;
 }
 
-static void on_packet(void *analyzer, const uint8_t *packet, size_t len, wd_direction dir) {
-    __atomic_add_fetch(&hooked[dir], 1, __ATOMIC_RELAXED);
-    wd_analyzer_on_packet(analyzer, packet, len, dir);
+static void on_event(void *analyzer, const wd_event *event) {
+    if (event->type == WD_PACKET) __atomic_add_fetch(&packets, 1, __ATOMIC_RELAXED);
+    if (event->type == WD_TCP_DATA)
+        __atomic_add_fetch(&stream_bytes[event->direction], event->captured, __ATOMIC_RELAXED);
+    if (event->type == WD_STREAM_END)
+        __atomic_add_fetch(&stream_ends[event->direction], 1, __ATOMIC_RELAXED);
+    if (event->type == WD_UDP_DATAGRAM)
+        __atomic_add_fetch(&datagrams[event->direction], 1, __ATOMIC_RELAXED);
+    wd_analyzer_on_event(analyzer, event);
 }
 
 int main(int argc, char **argv) {
@@ -47,8 +53,12 @@ int main(int argc, char **argv) {
         return 1;
     }
     void *analyzer = wd_analyzer_create();
-    wd_tunnel *t = wd_tunnel_create(on_output, NULL, &fd, on_packet, analyzer);
-    if (!t) return 1;
+    wd_tunnel *t = analyzer ? wd_tunnel_create(on_output, NULL, &fd, on_event, analyzer) : NULL;
+    if (!t) {
+        wd_analyzer_destroy(analyzer);
+        close(fd);
+        return 1;
+    }
     printf("ready\n");
     fflush(stdout);
 
@@ -64,6 +74,11 @@ int main(int argc, char **argv) {
     }
     wd_tunnel_destroy(t);
     wd_analyzer_destroy(analyzer);
-    printf("hook outbound=%lu inbound=%lu\n", hooked[WD_DIR_OUTBOUND], hooked[WD_DIR_INBOUND]);
+    close(fd);
+    printf("hook app_packets=%lu stream_samples out=%lu/%lu in=%lu/%lu udp=%lu/%lu\n",
+           packets,
+           stream_bytes[WD_DIR_OUTBOUND], stream_ends[WD_DIR_OUTBOUND],
+           stream_bytes[WD_DIR_INBOUND], stream_ends[WD_DIR_INBOUND],
+           datagrams[0], datagrams[1]);
     return 0;
 }

@@ -1,0 +1,137 @@
+"需要位置权限才能绘制连接线。请在设置中允许访问位置。" = "Location access is needed to draw connection lines. Allow location access in Settings.";
+"正在获取位置，定位后显示连接线。" = "Waiting for your location to draw connection lines.";
+"打开设置" = "Open Settings";
+/* App chrome */
+"连线图志" = "LinkAtlas";
+"连接分布" = "Connection map";
+"连接在世界地图上的分布" = "Where your connections land on the world map";
+"通信的服务" = "Contacted services";
+"隐私与数据" = "Privacy & data";
+"数据说明 · 清空记录" = "Data policy · clear records";
+"本次会话 · 每 3 秒更新\n记录只保存在本机内存，关闭 VPN 后自动清空。" = "This session · updates every 3 s\nRecords live in memory only and are cleared when the VPN stops.";
+
+/* Stats */
+"通信量" = "Traffic";
+"通信量排行" = "Top traffic";
+"服务分布" = "Service distribution";
+"其他服务" = "Other services";
+"暂无 TCP 连接" = "No TCP connections yet";
+"暂无连接" = "No connections yet";
+"本次会话还没有连接记录" = "No connections recorded this session";
+"没有匹配的域名或 IP" = "No matching domain or IP";
+"未标注服务名" = "Unlabeled service";
+"搜索域名或 IP" = "Search domain or IP";
+"无选项" = "no options";
+
+/* Format strings */
+"合计 %@" = "Total %@";
+"上行 %@ · 下行 %@" = "Up %@ · Down %@";
+"%lld 次 · %.1f%%" = "%lld × · %.1f%%";
+"累计 %lld 个连接" = "%lld connections in total";
+"%lld 个服务 / 地址" = "%lld services / addresses";
+"TCP %lld 次 · UDP %lld 个流" = "TCP %lld × · UDP %lld flows";
+
+/* Privacy */
+"连接观察全部在你的手机里完成。联网仅用于设备注册、服务解读、购买验证和白名单下载。" = "All connection analysis happens on your phone. The app goes online only for device registration, Service insight, purchase verification, and whitelist downloads.";
+"记录什么" = "What we record";
+"目标 IP、端口、域名、上下行字节数、连接时间。" = "Destination IPs, ports, domains, per-connection byte counts, and timestamps.";
+"不记录什么" = "What we don’t record";
+"聊天内容、账号、密码、图片、文件、浏览记录。" = "Message content, accounts, passwords, images, files, or browsing history.";
+"保存在哪里" = "Where it’s stored";
+"只在本次会话的内存里，不写入磁盘。关闭 VPN 或点「清空记录」即释放。" = "Only in memory for this session — never written to disk. Stopping the VPN or tapping “Clear records” frees it.";
+"联网与上传" = "Network access";
+"本机连接记录永不上传。联网只发生在这几种情况：
+① 设备注册——首次使用联网功能时发送平台、应用版本和设备公钥，经 App Attest（iOS）/ Play Integrity（Android）验证真实性，仅用于签发访问凭证；
+② 服务解读——把你选择的那一个域名或 IP 发送给查询服务器，由服务器转交 AI 模型分析；
+③ 购买验证——购买凭证发送给查询服务器核验额度；
+④ 白名单——启动时从服务器下载过滤规则。
+这些请求都不会携带你的连接记录。" = "Local connection records are never uploaded. The app only goes online in these cases:
+① Device registration — on first use of an online feature the app sends the platform, app version, and a device public key, verified by App Attest (iOS) / Play Integrity (Android), used only to issue access credentials;
+② Service insight — the single domain or IP you choose is sent to our lookup server, which forwards it to an AI model for analysis;
+③ Purchase verification — receipts are sent to the server to verify your entitlement;
+④ Whitelist — filter rules are downloaded from the server at launch.
+None of these requests carries your connection records.";
+"第三方 SDK" = "Third-party SDKs";
+"无统计、无广告、无埋点。IP 归属地使用随安装包内置的离线数据库；服务解读由 AI 模型生成，模型只会收到你查询的那一个地址。" = "No analytics, ads, or tracking. IP geolocation uses an offline database bundled in the app. Service insight is produced by an AI model that only receives the single address you queried.";
+"位置权限" = "Location permission";
+"只有大致位置，仅用于在地图上标出你的起点，不保存、不上传。可随时在系统设置中关闭。" = "Approximate location only, used solely to mark your starting point on the map. Never saved or uploaded; you can revoke it in system settings anytime.";
+"VPN 权限" = "VPN permission";
+"系统只允许通过 VPN 接口读取连接信息，这是本应用申请它的唯一用途：流量原样转发，不做拦截、不改内容。" = "The VPN interface is the only way the system lets an app see connection metadata — its sole purpose here. Traffic is forwarded unchanged: no blocking, no modification.";
+"查看完整隐私政策" = "Read the full privacy policy";
+"清空记录" = "Clear records";
+"已清空" = "Cleared";
+"清空本次会话记录？" = "Clear this session’s records?";
+"将删除当前会话的全部连接记录，无法恢复。VPN 保持连接。" = "All connection records of the current session will be deleted and cannot be recovered. The VPN stays connected.";
+"取消" = "Cancel";
+"确定" = "OK";
+"隐私政策" = "Privacy Policy";
+
+/* Onboarding */
+"你好" = "Hello";
+"看清自己的连接" = "See your own connections";
+"不读内容，不落盘" = "No content read, nothing on disk";
+"本地分析，主动查询才联网" = "Local analysis — online only when you query";
+"开始体验" = "Get started";
+
+/* Lookup detail */
+"连接详情" = "Connection detail";
+"服务解读" = "Service insight";
+"查询该连接的服务归属需要将域名或 IP 发送给服务器；不会上传流量内容、完整 URL 或进程信息。" = "Querying the owner of this service sends its domain or IP to our server. No payload, full URL, or process name is uploaded.";
+"继续查询" = "Continue";
+"正在查询…" = "Looking up…";
+"本地 IP 没有更多信息" = "No further information is available for local IPs";
+"请求过于频繁，请稍后重试" = "Too many requests; try again shortly";
+"该查询已过期，请返回后重新进入" = "This lookup expired; go back and re-enter";
+"查看解读需要购买" = "Purchase required to view insight";
+"查询暂时不可用，请稍后重试" = "Lookup temporarily unavailable; retry later";
+"购买尚未开通" = "Purchases are not enabled yet";
+"支付中…" = "Paying…";
+"验证购买中…" = "Verifying purchase…";
+"支付处理中，稍后自动到账" = "Payment pending; credit arrives automatically";
+"购买已失效" = "Purchase no longer valid";
+"购买验证失败，可重试验证" = "Verification failed; you can retry";
+"单次查询" = "Single lookup";
+"专业版 · 月付" = "Pro · Monthly";
+"专业版按月或按年自动续订，可随时在商店管理页面取消；取消后当期仍有效" = "Pro renews monthly or yearly and can be cancelled anytime in store settings; the current period stays active";
+"重试" = "Retry";
+"恢复购买" = "Restore purchases";
+"目标" = "Target";
+"位置" = "Location";
+"运营方" = "Owner";
+"解读" = "Summary";
+"安全等级" = "Security";
+"低风险" = "Low risk";
+"中风险" = "Medium risk";
+"高风险" = "High risk";
+"未知" = "Unknown";
+"服务" = "Service";
+"置信度高" = "High confidence";
+"置信度中" = "Medium confidence";
+"置信度低" = "Low confidence";
+"云服务" = "Cloud";
+"广告" = "Ads";
+"遥测" = "Telemetry";
+"社交" = "Social";
+"邮件" = "Mail";
+"流媒体" = "Streaming";
+"系统厂商" = "OS vendor";
+"物联网" = "IoT";
+"开发者服务" = "Developer";
+"安全服务" = "Security";
+"其他" = "Other";
+"已过滤的服务" = "Filtered services";
+"%lld 个连接被白名单隐藏" = "%lld connections hidden by the whitelist";
+"没有被白名单隐藏的连接" = "No connections hidden by the whitelist";
+"概览" = "Summary";
+"%lld 个服务 · %lld 次连接 · 已过滤 %lld 个" = "%lld services · %lld connections · %lld filtered";
+
+/* Location prompt */
+"需要位置权限" = "Location required";
+"允许定位" = "Allow";
+"拒绝" = "Decline";
+"以你的位置为起点在地图上绘制连接线，只需大致位置，不会上传。" = "Your position is the starting point for drawing connection lines on the map — approximate location only, never uploaded.";
+"未授权位置访问" = "Location access not granted";
+"连接分布需要位置权限才能在地图上标出你的起点。" = "The connection map needs location access to mark your starting point.";
+"返回" = "Back";
+" · 约略位置" = " · approximate";
+"专业版 · 年付" = "Pro · Yearly";

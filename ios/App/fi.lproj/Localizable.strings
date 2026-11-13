@@ -1,0 +1,137 @@
+"需要位置权限才能绘制连接线。请在设置中允许访问位置。" = "Yhteysviivojen piirtäminen vaatii sijaintioikeuden. Salli sijainti Asetuksissa.";
+"正在获取位置，定位后显示连接线。" = "Sijaintia haetaan; yhteysviivat näytetään paikannuksen jälkeen.";
+"打开设置" = "Avaa Asetukset";
+/* App chrome */
+"连线图志" = "LinkAtlas";
+"连接分布" = "Yhteyskartta";
+"连接在世界地图上的分布" = "Mihin yhteytesi sijoittuvat maailmankartalla";
+"通信的服务" = "Yhteydessä olevat palvelut";
+"隐私与数据" = "Yksityisyys ja tiedot";
+"数据说明 · 清空记录" = "Tietojen käsittely · tyhjennä tallenteet";
+"本次会话 · 每 3 秒更新\n记录只保存在本机内存，关闭 VPN 后自动清空。" = "Tämä istunto · päivittyy 3 s välein\nTallenteet ovat vain muistissa ja tyhjentyvät VPN:n pysähtyessä.";
+
+/* Stats */
+"通信量" = "Liikenne";
+"通信量排行" = "Suurin liikenne";
+"服务分布" = "Palvelujen jakauma";
+"其他服务" = "Muut palvelut";
+"暂无 TCP 连接" = "Ei TCP-yhteyksiä vielä";
+"暂无连接" = "Ei yhteyksiä vielä";
+"本次会话还没有连接记录" = "Ei tallennettuja yhteyksiä tässä istunnossa";
+"没有匹配的域名或 IP" = "Ei vastaavaa verkkotunnusta tai IP:tä";
+"未标注服务名" = "Tunnistamaton palvelu";
+"搜索域名或 IP" = "Hae verkkotunnusta tai IP:tä";
+"无选项" = "Ei vaihtoehtoja";
+
+/* Format strings */
+"合计 %@" = "Yhteensä %@";
+"上行 %@ · 下行 %@" = "Lähetetty %@ · Vastaanotettu %@";
+"%lld 次 · %.1f%%" = "%lld × · %.1f%%";
+"累计 %lld 个连接" = "Yhteensä %lld yhteyttä";
+"%lld 个服务 / 地址" = "%lld palvelua / osoitetta";
+"TCP %lld 次 · UDP %lld 个流" = "TCP %lld × · UDP %lld virtaa";
+
+/* Privacy */
+"连接观察全部在你的手机里完成。联网仅用于设备注册、服务解读、购买验证和白名单下载。" = "Kaikki yhteysanalyysi tapahtuu laitteellasi. Sovellus käyttää verkkoa vain laiterekisteröintiin, palveluanalyysiin, ostojen varmistukseen ja sallittujen listan lataamiseen.";
+"记录什么" = "Mitä tallennamme";
+"目标 IP、端口、域名、上下行字节数、连接时间。" = "Kohde-IP:t, portit, verkkotunnukset, tavumäärät yhteyttä kohden ja aikaleimat.";
+"不记录什么" = "Mitä emme tallenna";
+"聊天内容、账号、密码、图片、文件、浏览记录。" = "Viestien sisältöä, tilejä, salasanoja, kuvia, tiedostoja tai selaushistoriaa.";
+"保存在哪里" = "Missä tiedot säilyvät";
+"只在本次会话的内存里，不写入磁盘。关闭 VPN 或点「清空记录」即释放。" = "Vain tämän istunnon muistissa — ei koskaan levylle. VPN:n pysäyttäminen tai «Tyhjennä tallenteet» -napin painaminen vapauttaa ne.";
+"联网与上传" = "Verkkoyhteys";
+"本机连接记录永不上传。联网只发生在这几种情况：
+① 设备注册——首次使用联网功能时发送平台、应用版本和设备公钥，经 App Attest（iOS）/ Play Integrity（Android）验证真实性，仅用于签发访问凭证；
+② 服务解读——把你选择的那一个域名或 IP 发送给查询服务器，由服务器转交 AI 模型分析；
+③ 购买验证——购买凭证发送给查询服务器核验额度；
+④ 白名单——启动时从服务器下载过滤规则。
+这些请求都不会携带你的连接记录。" = "Paikallisia yhteystietueita ei koskaan lähetetä. Sovellus käyttää verkkoa vain näissä tapauksissa:
+① Laiterekisteröinti — online-ominaisuuden ensimmäisellä käyttökerralla sovellus lähettää alustan, sovellusversion ja laitteen julkisen avaimen, jotka varmennetaan App Attestillä (iOS) / Play Integrity'llä (Android); niitä käytetään vain pääsytunnusten myöntämiseen;
+② Palveluanalyysi — valitsemasi yksittäinen verkkotunnus tai IP lähetetään hakupalvelimelle, joka välittää sen AI-mallille analysoitavaksi;
+③ Ostojen varmistus — kuitit lähetetään palvelimelle oikeutesi varmistamiseksi;
+④ Sallittujen lista — suodatinsäännöt ladataan palvelimelta käynnistyksessä.
+Mikään näistä pyynnöistä ei sisällä yhteystietueitasi.";
+"第三方 SDK" = "Kolmannen osapuolen SDK:t";
+"无统计、无广告、无埋点。IP 归属地使用随安装包内置的离线数据库；服务解读由 AI 模型生成，模型只会收到你查询的那一个地址。" = "Ei analytiikkaa, mainontaa tai seurantaa. IP-paikannus käyttää sovellukseen sisältyvää offline-tietokantaa. Palveluanalyysin tuottaa tekoälymalli, joka saa vain kysellyn yksittäisen osoitteen.";
+"位置权限" = "Sijaintioikeus";
+"只有大致位置，仅用于在地图上标出你的起点，不保存、不上传。可随时在系统设置中关闭。" = "Vain likimääräinen sijainti, käytetään ainoastaan lähtöpisteesi merkitsemiseen kartalle. Ei tallenneta eikä lähetetä; voit peruuttaa milloin tahansa järjestelmän asetuksista.";
+"VPN 权限" = "VPN-oikeus";
+"系统只允许通过 VPN 接口读取连接信息，这是本应用申请它的唯一用途：流量原样转发，不做拦截、不改内容。" = "VPN-rajapinta on ainoa tapa, jolla järjestelmä sallii sovelluksen nähdä yhteysmetatiedot — sen ainoa tarkoitus tässä. Liikenne välitetään muuttumattomana: ei estoa, ei muokkausta.";
+"查看完整隐私政策" = "Lue koko tietosuojakäytäntö";
+"清空记录" = "Tyhjennä tallenteet";
+"已清空" = "Tyhjennetty";
+"清空本次会话记录？" = "Tyhjennetäänkö tämän istunnon tallenteet?";
+"将删除当前会话的全部连接记录，无法恢复。VPN 保持连接。" = "Kaikki nykyisen istunnon yhteystallenteet poistetaan eikä niitä voi palauttaa. VPN pysyy yhdistettynä.";
+"取消" = "Peruuta";
+"确定" = "OK";
+"隐私政策" = "Tietosuojakäytäntö";
+
+/* Onboarding */
+"你好" = "Hei";
+"看清自己的连接" = "Näe omat yhteytesi";
+"不读内容，不落盘" = "Sisältöä ei lueta, mitään ei jää levylle";
+"本地分析，主动查询才联网" = "Paikallinen analyysi — verkossa vain kyselyn aikana";
+"开始体验" = "Aloita";
+
+/* Lookup detail */
+"连接详情" = "Yhteyden tiedot";
+"服务解读" = "Palveluanalyysi";
+"查询该连接的服务归属需要将域名或 IP 发送给服务器；不会上传流量内容、完整 URL 或进程信息。" = "Tämän palvelun ylläpitäjän selvittäminen lähettää sen verkkotunnuksen tai IP:n palvelimellemme. Sisältöä, täyttä URL:ia tai prosessin nimeä ei lähetetä.";
+"继续查询" = "Jatka";
+"正在查询…" = "Haetaan…";
+"本地 IP 没有更多信息" = "Paikallisille IP-osoitteille ei ole lisätietoja";
+"请求过于频繁，请稍后重试" = "Liikaa pyyntöjä; yritä pian uudelleen";
+"该查询已过期，请返回后重新进入" = "Tämä haku vanheni; palaa takaisin ja yritä uudelleen";
+"查看解读需要购买" = "Analyysin katsominen vaatii ostoksen";
+"查询暂时不可用，请稍后重试" = "Haku ei ole tilapäisesti saatavilla; yritä myöhemmin uudelleen";
+"购买尚未开通" = "Ostoksia ei ole vielä käytössä";
+"支付中…" = "Maksetaan…";
+"验证购买中…" = "Varmennetaan ostoa…";
+"支付处理中，稍后自动到账" = "Maksu odottaa; hyvitys saapuu automaattisesti";
+"购买已失效" = "Osto ei ole enää voimassa";
+"购买验证失败，可重试验证" = "Vahvistus epäonnistui; voit yrittää uudelleen";
+"单次查询" = "Yksittäinen haku";
+"专业版 · 月付" = "Pro · Kuukausittain";
+"专业版按月或按年自动续订，可随时在商店管理页面取消；取消后当期仍有效" = "Pro uusiutuu kuukausittain tai vuosittain ja sen voi perua milloin tahansa kaupan asetuksista; käynnissä oleva jakso pysyy voimassa";
+"重试" = "Yritä uudelleen";
+"恢复购买" = "Palauta ostot";
+"目标" = "Kohde";
+"位置" = "Sijainti";
+"运营方" = "Ylläpitäjä";
+"解读" = "Yhteenveto";
+"安全等级" = "Turvallisuus";
+"低风险" = "Matala riski";
+"中风险" = "Keskitason riski";
+"高风险" = "Korkea riski";
+"未知" = "Tuntematon";
+"服务" = "Palvelu";
+"置信度高" = "Luotettavuus: korkea";
+"置信度中" = "Luotettavuus: keskitaso";
+"置信度低" = "Luotettavuus: matala";
+"云服务" = "Pilvi";
+"广告" = "Mainonta";
+"遥测" = "Telemetria";
+"社交" = "Sosiaalinen media";
+"邮件" = "Sähköposti";
+"流媒体" = "Suoratoisto";
+"系统厂商" = "Käyttöjärjestelmätoimittaja";
+"物联网" = "IoT";
+"开发者服务" = "Kehittäjäpalvelut";
+"安全服务" = "Tietoturva";
+"其他" = "Muu";
+"已过滤的服务" = "Suodatetut palvelut";
+"%lld 个连接被白名单隐藏" = "Sallittujen luettelo piilotti %lld yhteyttä";
+"没有被白名单隐藏的连接" = "Sallittujen luettelo ei piilottanut yhteyksiä";
+"概览" = "Yhteenveto";
+"%lld 个服务 · %lld 次连接 · 已过滤 %lld 个" = "%lld palvelua · %lld yhteyttä · %lld suodatettu";
+
+/* Location prompt */
+"需要位置权限" = "Sijainti vaaditaan";
+"允许定位" = "Salli";
+"拒绝" = "Estä";
+"以你的位置为起点在地图上绘制连接线，只需大致位置，不会上传。" = "Sijaintisi on yhteysviivojen lähtöpiste kartalla — vain likimääräinen sijainti, ei koskaan lähetetä.";
+"未授权位置访问" = "Sijaintioikeutta ei myönnetty";
+"连接分布需要位置权限才能在地图上标出你的起点。" = "Yhteyskartta tarvitsee sijaintioikeuden lähtöpisteesi merkitsemiseksi.";
+"返回" = "Takaisin";
+" · 约略位置" = " · likimääräinen";
+"专业版 · 年付" = "Pro · Vuosittain";

@@ -1,0 +1,137 @@
+"需要位置权限才能绘制连接线。请在设置中允许访问位置。" = "Standortzugriff ist erforderlich, um Verbindungslinien zu zeichnen. Erlauben Sie den Standortzugriff in den Einstellungen.";
+"正在获取位置，定位后显示连接线。" = "Standort wird abgerufen; Verbindungslinien erscheinen nach der Ortung.";
+"打开设置" = "Einstellungen öffnen";
+/* App chrome */
+"连线图志" = "LinkAtlas";
+"连接分布" = "Verbindungskarte";
+"连接在世界地图上的分布" = "Wo Ihre Verbindungen auf der Weltkarte landen";
+"通信的服务" = "Kontaktierte Dienste";
+"隐私与数据" = "Datenschutz & Daten";
+"数据说明 · 清空记录" = "Datenhinweise · Aufzeichnungen löschen";
+"本次会话 · 每 3 秒更新\n记录只保存在本机内存，关闭 VPN 后自动清空。" = "Diese Sitzung · Aktualisierung alle 3 s\nAufzeichnungen liegen nur im Arbeitsspeicher und werden beim Stoppen des VPN gelöscht.";
+
+/* Stats */
+"通信量" = "Datenverkehr";
+"通信量排行" = "Top-Datenverkehr";
+"服务分布" = "Dienstverteilung";
+"其他服务" = "Andere Dienste";
+"暂无 TCP 连接" = "Noch keine TCP-Verbindungen";
+"暂无连接" = "Noch keine Verbindungen";
+"本次会话还没有连接记录" = "Keine Verbindungen in dieser Sitzung aufgezeichnet";
+"没有匹配的域名或 IP" = "Keine passende Domain oder IP";
+"未标注服务名" = "Unbekannter Dienst";
+"搜索域名或 IP" = "Domain oder IP suchen";
+"无选项" = "Keine Optionen";
+
+/* Format strings */
+"合计 %@" = "Gesamt %@";
+"上行 %@ · 下行 %@" = "Up %@ · Down %@";
+"%lld 次 · %.1f%%" = "%lld × · %.1f%%";
+"累计 %lld 个连接" = "Insgesamt %lld Verbindungen";
+"%lld 个服务 / 地址" = "%lld Dienste / Adressen";
+"TCP %lld 次 · UDP %lld 个流" = "TCP %lld × · UDP %lld Flüsse";
+
+/* Privacy */
+"连接观察全部在你的手机里完成。联网仅用于设备注册、服务解读、购买验证和白名单下载。" = "Die gesamte Verbindungsanalyse findet auf deinem Gerät statt. Die App geht nur für Geräteregistrierung, Service-Einblick, Kaufbestätigung und Whitelist-Downloads online.";
+"记录什么" = "Was wir aufzeichnen";
+"目标 IP、端口、域名、上下行字节数、连接时间。" = "Ziel-IPs, Ports, Domains, Bytezahlen pro Verbindung und Zeitstempel.";
+"不记录什么" = "Was wir nicht aufzeichnen";
+"聊天内容、账号、密码、图片、文件、浏览记录。" = "Nachrichteninhalte, Konten, Passwörter, Bilder, Dateien oder Browserverlauf.";
+"保存在哪里" = "Wo sie gespeichert werden";
+"只在本次会话的内存里，不写入磁盘。关闭 VPN 或点「清空记录」即释放。" = "Nur im Arbeitsspeicher für diese Sitzung – nie auf die Festplatte geschrieben. Beim Stoppen des VPN oder Tippen auf „Aufzeichnungen löschen“ wird der Speicher freigegeben.";
+"联网与上传" = "Netzwerkzugriff";
+"本机连接记录永不上传。联网只发生在这几种情况：
+① 设备注册——首次使用联网功能时发送平台、应用版本和设备公钥，经 App Attest（iOS）/ Play Integrity（Android）验证真实性，仅用于签发访问凭证；
+② 服务解读——把你选择的那一个域名或 IP 发送给查询服务器，由服务器转交 AI 模型分析；
+③ 购买验证——购买凭证发送给查询服务器核验额度；
+④ 白名单——启动时从服务器下载过滤规则。
+这些请求都不会携带你的连接记录。" = "Lokale Verbindungsdaten werden niemals hochgeladen. Die App geht nur in diesen Fällen online:
+① Geräteregistrierung — bei der ersten Nutzung einer Online-Funktion sendet die App Plattform, App-Version und einen öffentlichen Geräteschlüssel, verifiziert durch App Attest (iOS) / Play Integrity (Android); dies dient nur zum Ausstellen von Zugangsdaten;
+② Service-Einblick — die einzelne Domain oder IP, die du auswählst, wird an unseren Lookup-Server gesendet, der sie zur Analyse an ein KI-Modell weiterleitet;
+③ Kaufbestätigung — Belege werden zur Verifizierung deines Anspruchs an den Server gesendet;
+④ Whitelist — Filterregeln werden beim Start vom Server heruntergeladen.
+Keine dieser Anfragen enthält deine Verbindungsdaten.";
+"第三方 SDK" = "Drittanbieter-SDKs";
+"无统计、无广告、无埋点。IP 归属地使用随安装包内置的离线数据库；服务解读由 AI 模型生成，模型只会收到你查询的那一个地址。" = "Keine Analysen, Werbung oder Tracking. Die IP-Geolokalisierung verwendet eine in der App gebündelte Offline-Datenbank. Die Dienstanalyse wird von einem KI-Modell erstellt, das nur die einzelne abgefragte Adresse erhält.";
+"位置权限" = "Standortberechtigung";
+"只有大致位置，仅用于在地图上标出你的起点，不保存、不上传。可随时在系统设置中关闭。" = "Nur ungefährer Standort, ausschließlich zur Markierung Ihres Ausgangspunkts auf der Karte. Nie gespeichert oder hochgeladen; in den Systemeinstellungen jederzeit widerrufbar.";
+"VPN 权限" = "VPN-Berechtigung";
+"系统只允许通过 VPN 接口读取连接信息，这是本应用申请它的唯一用途：流量原样转发，不做拦截、不改内容。" = "Die VPN-Schnittstelle ist die einzige Möglichkeit des Systems, einer App Verbindungsmetadaten einzusehen – ihr einziger Zweck hier. Der Datenverkehr wird unverändert weitergeleitet: kein Blockieren, keine Änderung.";
+"查看完整隐私政策" = "Vollständige Datenschutzerklärung lesen";
+"清空记录" = "Aufzeichnungen löschen";
+"已清空" = "Gelöscht";
+"清空本次会话记录？" = "Aufzeichnungen dieser Sitzung löschen?";
+"将删除当前会话的全部连接记录，无法恢复。VPN 保持连接。" = "Alle Verbindungsaufzeichnungen der aktuellen Sitzung werden gelöscht und können nicht wiederhergestellt werden. Das VPN bleibt verbunden.";
+"取消" = "Abbrechen";
+"确定" = "OK";
+"隐私政策" = "Datenschutzerklärung";
+
+/* Onboarding */
+"你好" = "Hallo";
+"看清自己的连接" = "Sehen Sie Ihre eigenen Verbindungen";
+"不读内容，不落盘" = "Kein Lesen von Inhalten, nichts auf der Festplatte";
+"本地分析，主动查询才联网" = "Lokale Analyse – nur online bei Abfrage";
+"开始体验" = "Los geht's";
+
+/* Lookup detail */
+"连接详情" = "Verbindungsdetails";
+"服务解读" = "Dienstanalyse";
+"查询该连接的服务归属需要将域名或 IP 发送给服务器；不会上传流量内容、完整 URL 或进程信息。" = "Zum Abfragen des Betreibers dieses Dienstes wird dessen Domain oder IP an unseren Server gesendet. Es werden keine Nutzdaten, vollständige URLs oder Prozessnamen hochgeladen.";
+"继续查询" = "Weiter";
+"正在查询…" = "Suche läuft…";
+"本地 IP 没有更多信息" = "Für lokale IPs sind keine weiteren Informationen verfügbar";
+"请求过于频繁，请稍后重试" = "Zu viele Anfragen; bitte gleich erneut versuchen";
+"该查询已过期，请返回后重新进入" = "Diese Abfrage ist abgelaufen; zurückgehen und erneut eingeben";
+"查看解读需要购买" = "Kauf erforderlich, um die Analyse anzuzeigen";
+"查询暂时不可用，请稍后重试" = "Abfrage vorübergehend nicht verfügbar; später erneut versuchen";
+"购买尚未开通" = "Käufe sind noch nicht aktiviert";
+"支付中…" = "Zahlung läuft…";
+"验证购买中…" = "Kauf wird überprüft…";
+"支付处理中，稍后自动到账" = "Zahlung ausstehend; Gutschrift erfolgt automatisch";
+"购买已失效" = "Kauf nicht mehr gültig";
+"购买验证失败，可重试验证" = "Überprüfung fehlgeschlagen; erneut versuchen möglich";
+"单次查询" = "Einzelsuche";
+"专业版 · 月付" = "Pro · Monatlich";
+"专业版按月或按年自动续订，可随时在商店管理页面取消；取消后当期仍有效" = "Pro verlängert sich monatlich oder jährlich und kann jederzeit in den Store-Einstellungen gekündigt werden; der laufende Zeitraum bleibt aktiv";
+"重试" = "Wiederholen";
+"恢复购买" = "Käufe wiederherstellen";
+"目标" = "Ziel";
+"位置" = "Standort";
+"运营方" = "Betreiber";
+"解读" = "Zusammenfassung";
+"安全等级" = "Sicherheit";
+"低风险" = "Niedriges Risiko";
+"中风险" = "Mittleres Risiko";
+"高风险" = "Hohes Risiko";
+"未知" = "Unbekannt";
+"服务" = "Dienst";
+"置信度高" = "Hohe Vertrauenswürdigkeit";
+"置信度中" = "Mittlere Vertrauenswürdigkeit";
+"置信度低" = "Niedrige Vertrauenswürdigkeit";
+"云服务" = "Cloud";
+"广告" = "Werbung";
+"遥测" = "Telemetrie";
+"社交" = "Soziale Netzwerke";
+"邮件" = "E-Mail";
+"流媒体" = "Streaming";
+"系统厂商" = "OS-Anbieter";
+"物联网" = "IoT";
+"开发者服务" = "Entwicklerdienste";
+"安全服务" = "Sicherheitsdienste";
+"其他" = "Sonstiges";
+"已过滤的服务" = "Gefilterte Dienste";
+"%lld 个连接被白名单隐藏" = "%lld Verbindungen durch die Whitelist ausgeblendet";
+"没有被白名单隐藏的连接" = "Keine Verbindungen durch die Whitelist ausgeblendet";
+"概览" = "Zusammenfassung";
+"%lld 个服务 · %lld 次连接 · 已过滤 %lld 个" = "%lld Dienste · %lld Verbindungen · %lld gefiltert";
+
+/* Location prompt */
+"需要位置权限" = "Standort erforderlich";
+"允许定位" = "Erlauben";
+"拒绝" = "Ablehnen";
+"以你的位置为起点在地图上绘制连接线，只需大致位置，不会上传。" = "Ihr Standort ist der Ausgangspunkt der Verbindungslinien auf der Karte – nur ungefährer Standort, niemals hochgeladen.";
+"未授权位置访问" = "Standortzugriff nicht erteilt";
+"连接分布需要位置权限才能在地图上标出你的起点。" = "Die Verbindungskarte benötigt Standortzugriff, um Ihren Ausgangspunkt zu markieren.";
+"返回" = "Zurück";
+" · 约略位置" = " · ungefähr";
+"专业版 · 年付" = "Pro · Jährlich";

@@ -1865,7 +1865,7 @@
 #endif
 
 /**
- * Define this to something that triggers a watchdog. This is called from
+ * Define this to something that triggers a linkatlas. This is called from
  * tcpip_thread after processing a message.
  */
 #if !defined LWIP_TCPIP_THREAD_ALIVE || defined __DOXYGEN__

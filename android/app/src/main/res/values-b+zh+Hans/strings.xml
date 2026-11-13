@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">连线图志</string>
+
+    <!-- Detail pages -->
+    <string name="live_overview">实时概览</string>
+    <string name="live_overview_note">本次会话 · 每 3 秒更新</string>
+    <string name="overview_connections">连接</string>
+    <string name="overview_bytes">通信量</string>
+    <string name="connection_map">连接分布</string>
+    <string name="connection_map_note">连接在世界地图上的分布</string>
+    <string name="settings">详情</string>
+    <string name="back">返回</string>
+    <string name="communication_services">通信的服务</string>
+    <string name="website_count">%1$d 个服务 / 地址</string>
+    <string name="filtered_services">已过滤的服务</string>
+    <string name="filtered_services_note">%1$d 个连接被白名单隐藏</string>
+    <string name="geoip_approx"> · 约略位置</string>
+    <string name="map_recenter">回到我的位置</string>
+    <string name="map_location_title">需要位置权限</string>
+    <string name="map_location_body">以你的位置为起点在地图上绘制连接线，只需大致位置，不会上传。</string>
+    <string name="map_location_allow">允许定位</string>
+    <string name="map_location_deny">拒绝</string>
+    <string name="map_location_toast">连接分布需要位置权限，请在系统设置中开启定位</string>
+    <string name="session_statistics_note">本次会话 · 每 3 秒更新\n记录只保存在本机内存，关闭 VPN 后自动清空。</string>
+    <string name="connection_distribution">服务分布</string>
+    <string name="other_websites">其他服务</string>
+    <string name="connection_slice">%1$d 次 · %2$.1f%%</string>
+    <string name="no_connections">暂无连接</string>
+    <string name="search_domain_ip">搜索域名或 IP</string>
+    <string name="no_websites">本次会话还没有连接记录</string>
+    <string name="no_matching_websites">没有匹配的域名或 IP</string>
+    <string name="domain_unlabeled">未标注服务名</string>
+    <string name="website_connections">TCP %1$d 次 · UDP %2$d 个流</string>
+    <string name="traffic_rank">通信量排行</string>
+    <string name="total_traffic">合计 %1$s</string>
+    <string name="traffic_out_in">上行 %1$s · 下行 %2$s</string>
+    <string name="protocol_total">累计 %1$d 个连接</string>
+
+    <!-- Privacy page -->
+    <string name="privacy_title">隐私与数据</string>
+    <string name="privacy_intro">连接观察全部在你的手机里完成。联网仅用于设备注册、服务解读、购买验证和白名单下载。</string>
+    <string name="privacy_collect_title">记录什么</string>
+    <string name="privacy_collect_body">目标 IP、端口、域名、上下行字节数、连接时间。</string>
+    <string name="privacy_not_collect_title">不记录什么</string>
+    <string name="privacy_not_collect_body">聊天内容、账号、密码、图片、文件、浏览记录。</string>
+    <string name="privacy_storage_title">保存在哪里</string>
+    <string name="privacy_storage_body">只在本次会话的内存里，不写入磁盘。关闭 VPN 或点「清空记录」即释放。</string>
+    <string name="privacy_transfer_title">联网与上传</string>
+    <string name="privacy_transfer_body">本机连接记录永不上传。联网只发生在这几种情况：
+① 设备注册——首次使用联网功能时发送平台、应用版本和设备公钥，经 App Attest（iOS）/ Play Integrity（Android）验证真实性，仅用于签发访问凭证；
+② 服务解读——把你选择的那一个域名或 IP 发送给查询服务器，由服务器转交 AI 模型分析；
+③ 购买验证——购买凭证发送给查询服务器核验额度；
+④ 白名单——启动时从服务器下载过滤规则。
+这些请求都不会携带你的连接记录。</string>
+    <string name="privacy_third_party_title">第三方 SDK</string>
+    <string name="privacy_third_party_body">无统计、无广告、无埋点。IP 归属地使用随安装包内置的离线数据库；服务解读由 AI 模型生成，模型只会收到你查询的那一个地址。</string>
+    <string name="privacy_location_title">位置权限</string>
+    <string name="privacy_location_body">只有大致位置，仅用于在地图上标出你的起点，不保存、不上传。可随时在系统设置中关闭。</string>
+    <string name="privacy_vpn_title">VPN 权限</string>
+    <string name="privacy_vpn_body">系统只允许通过 VPN 接口读取连接信息，这是本应用申请它的唯一用途：流量原样转发，不做拦截、不改内容。</string>
+    <string name="privacy_policy_link">查看完整隐私政策</string>
+    <string name="privacy_clear">清空记录</string>
+    <string name="privacy_clear_confirm_title">清空本次会话记录？</string>
+    <string name="privacy_clear_confirm_body">将删除当前会话的全部连接记录，无法恢复。VPN 保持连接。</string>
+    <string name="privacy_cleared">已清空</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+
+    <!-- First run -->
+    <string name="onboarding_hello">你好</string>
+    <string name="onboarding_point_1">看清自己的连接</string>
+    <string name="onboarding_point_2">不读内容，不落盘</string>
+    <string name="onboarding_point_3">本地分析，主动查询才联网</string>
+    <string name="onboarding_start">开始体验</string>
+    <!-- Lookup -->
+    <string name="lookup_title">连接详情</string>
+    <string name="lookup_analysis">服务解读</string>
+    <string name="lookup_consent">查询该连接的服务归属需要将域名或 IP 发送给服务器；不会上传流量内容、完整 URL 或进程信息。</string>
+    <string name="lookup_continue">继续查询</string>
+    <string name="lookup_loading">正在查询…</string>
+    <string name="lookup_private">本地 IP 没有更多信息</string>
+    <string name="lookup_busy">请求过于频繁，请稍后重试</string>
+    <string name="lookup_request_expired">该查询已过期，请返回后重新进入</string>
+    <string name="lookup_purchase_needed">查看解读需要购买</string>
+    <string name="lookup_unavailable">查询暂时不可用，请稍后重试</string>
+    <string name="lookup_checkout_disabled">购买尚未开通</string>
+    <string name="lookup_paying">支付中…</string>
+    <string name="lookup_verifying">验证购买中…</string>
+    <string name="lookup_pending">支付处理中，稍后自动到账</string>
+    <string name="lookup_expired">购买已失效</string>
+    <string name="lookup_verify_failed">购买验证失败，可重试验证</string>
+    <string name="lookup_single">单次查询</string>
+    <string name="lookup_pro">专业版 · 月付</string>
+    <string name="lookup_pro_year">专业版 · 年付</string>
+    <string name="lookup_subscription_note">专业版按月或按年自动续订，可随时在商店管理页面取消；取消后当期仍有效</string>
+
+    <string name="lookup_retry">重试</string>
+    <string name="lookup_restore">恢复购买</string>
+    <string name="lookup_target">目标</string>
+    <string name="lookup_location">位置</string>
+    <string name="lookup_owner">运营方</string>
+    <string name="lookup_risk">安全等级</string>
+    <string name="lookup_risk_low">低风险</string>
+    <string name="lookup_risk_medium">中风险</string>
+    <string name="lookup_risk_high">高风险</string>
+    <string name="lookup_risk_unknown">未知</string>
+    <string name="lookup_summary">解读</string>
+    <string name="lookup_service">服务</string>
+    <string name="lookup_category">分类</string>
+    <string name="lookup_confidence">置信度</string>
+    <string name="lookup_confidence_high">高</string>
+    <string name="lookup_confidence_medium">中</string>
+    <string name="lookup_confidence_low">低</string>
+    <string name="lookup_cat_cdn">CDN</string>
+    <string name="lookup_cat_cloud">云服务</string>
+    <string name="lookup_cat_ads">广告</string>
+    <string name="lookup_cat_telemetry">遥测</string>
+    <string name="lookup_cat_social">社交</string>
+    <string name="lookup_cat_mail">邮件</string>
+    <string name="lookup_cat_streaming">流媒体</string>
+    <string name="lookup_cat_os_vendor">系统厂商</string>
+    <string name="lookup_cat_iot">物联网</string>
+    <string name="lookup_cat_dev">开发者服务</string>
+    <string name="lookup_cat_security">安全服务</string>
+    <string name="lookup_cat_other">其他</string>
+    <string name="uninstall">卸载</string>
+    <string name="later">稍后</string>
+    <string name="legacy_app_title">检测到旧版本</string>
+    <string name="legacy_app_message">本机上还装着旧版 MobileWatchdog，它会抢占 VPN 隧道导致本应用收不到数据。建议立即卸载。</string>
+    <string name="summary">概览</string>
+    <string name="services_summary">%1$d 个服务 · %2$d 次连接 · 已过滤 %3$d 个</string>
+</resources>

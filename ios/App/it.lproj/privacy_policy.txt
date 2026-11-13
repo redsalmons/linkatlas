@@ -1,0 +1,59 @@
+LinkAtlas · Privacy Policy
+Effective date: November 2, 2026
+
+In one sentence
+LinkAtlas reads “which services your phone connects to” and shows the results only to you. Your connection records are never uploaded, sold, or shared; only when you explicitly run a paid Service insight lookup is that single domain or IP sent to our lookup service.
+
+1. What we read
+· Destination IP addresses and ports
+· Domains obtained from TLS / QUIC handshakes, HTTP Host headers, or DNS responses
+· Per-connection up/down byte counts, connection counts, and timestamps
+
+2. What we do not read
+· Chat messages, email bodies, form contents
+· Accounts, passwords, cookies, tokens
+· Images, videos, file contents
+· Your contacts, SMS, photo library, clipboard
+· Which apps you have installed
+
+The app only parses the handshake information needed to establish a connection; it never reconstructs or stores any application-layer content.
+
+3. Where data is stored, and for how long
+All records exist only in memory for the current VPN session — never written to disk or a database.
+Turning off the VPN, tapping “Clear records”, or uninstalling the app releases them immediately.
+
+4. Network access and uploads
+Local connection records are never uploaded. The app only goes online in these cases:
+· Device registration: on first use of an online feature the app registers with our lookup server — sending the platform, app version, and a device public key, verified by App Attest (iOS) / Play Integrity (Android). It is used only to issue access credentials.
+· Service insight (paid): when you tap lookup, only the single domain or IP you chose is sent to our lookup server, which forwards it to an AI model for analysis. Results are cached server-side for about a month to speed up repeat lookups of the same address.
+· Purchase verification: receipts for App Store / Google Play purchases are sent to the lookup server to verify your entitlement.
+· Whitelist: filter rules are downloaded from the server at launch — download only.
+· Map: map styles and tiles are downloaded from OpenFreeMap (tiles.openfreemap.org); those requests contain only the map region.
+None of these requests carries your connection records, traffic content, full URLs, or process names. IP geolocation uses the DB-IP Lite offline database bundled in the app and never goes online.
+
+5. Permissions explained
+· VPN: the VPN interface is the only way the system lets an app read connection metadata. That is the sole reason this app requests it. Traffic is forwarded unchanged — no blocking, no modification, no injection.
+· Location (approximate only): used only to mark your starting point on the map. Never saved or uploaded. You can revoke it in system settings anytime; the map still works, it just won’t show a starting point.
+· Network state: used to tell whether the device is online.
+
+6. Third-party components
+· MapLibre: map rendering, open source (BSD-2-Clause).
+· DB-IP Lite: offline IP geolocation database, attribution “IP Geolocation by DB-IP” (CC BY 4.0).
+· GeoNames: offline city-name translations, attribution “City names by GeoNames”. Source: https://www.geonames.org/; license: https://creativecommons.org/licenses/by/4.0/. Bundled with the app; no queries are sent.
+· AI model provider: generates Service insight reports and only receives the single address you queried — never your connection records.
+· App Store / Google Play billing: processes purchases and subscriptions.
+None of these components collects or reports your usage data.
+
+7. Children
+This app is not directed at children under 13 and collects no personal information.
+
+8. Your control
+· Turn off the VPN in system settings anytime and capture stops immediately.
+· Tap “Clear records” on the in-app “Privacy & data” page to delete all records of the current session.
+· Uninstalling the app deletes all local data.
+
+9. Changes
+If this policy changes, we will show the updated version in the app and update the effective date.
+
+10. Contact us
+If you have questions, please reach us through the contact information on the app store page.

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LinkAtlas</string>
+
+    <!-- Detail pages -->
+    <string name="live_overview">リアルタイム概要</string>
+    <string name="live_overview_note">このセッション · 3 秒ごとに更新</string>
+    <string name="overview_connections">接続数</string>
+    <string name="overview_bytes">通信量</string>
+    <string name="connection_map">接続マップ</string>
+    <string name="connection_map_note">接続先が世界地図のどこにあるか</string>
+    <string name="settings">詳細</string>
+    <string name="back">戻る</string>
+    <string name="communication_services">接続したサービス</string>
+    <string name="website_count">%1$d 件のサービス / アドレス</string>
+    <string name="filtered_services">フィルター済みサービス</string>
+    <string name="filtered_services_note">ホワイトリストで非表示にした接続 %1$d 件</string>
+    <string name="geoip_approx"> · おおよその位置</string>
+    <string name="map_recenter">現在地</string>
+    <string name="map_location_title">位置情報が必要です</string>
+    <string name="map_location_body">現在地は地図上の各ルートの起点になります。おおよその位置のみ使用し、アップロードはしません。</string>
+    <string name="map_location_allow">許可</string>
+    <string name="map_location_deny">拒否</string>
+    <string name="map_location_toast">地図ルートには位置情報へのアクセスが必要です。設定で有効にしてください</string>
+    <string name="session_statistics_note">このセッション · 3 秒ごとに更新\n記録はメモリ上のみに保存され、VPN 停止時に消去されます。</string>
+    <string name="connection_distribution">サービス分布</string>
+    <string name="other_websites">その他のサービス</string>
+    <string name="connection_slice">%1$d 回 · %2$.1f%%</string>
+    <string name="no_connections">まだ接続がありません</string>
+    <string name="search_domain_ip">ドメインまたは IP を検索</string>
+    <string name="no_websites">このセッションの記録はありません</string>
+    <string name="no_matching_websites">一致するドメインまたは IP がありません</string>
+    <string name="domain_unlabeled">未分類のサービス</string>
+    <string name="website_connections">TCP %1$d 回 · UDP %2$d フロー</string>
+    <string name="traffic_rank">通信量ランキング</string>
+    <string name="total_traffic">合計 %1$s</string>
+    <string name="traffic_out_in">上り %1$s · 下り %2$s</string>
+    <string name="protocol_total">合計 %1$d 件の接続</string>
+
+    <!-- Privacy page -->
+    <string name="privacy_title">プライバシーとデータ</string>
+    <string name="privacy_intro">接続の分析はすべてお使いのデバイス上で行われます。オンラインになるのは、デバイス登録、サービスインサイト、購入の検証、ホワイトリストのダウンロードの場合のみです。</string>
+    <string name="privacy_collect_title">記録するもの</string>
+    <string name="privacy_collect_body">接続先 IP、ポート、ドメイン、接続ごとのバイト数、タイムスタンプ。</string>
+    <string name="privacy_not_collect_title">記録しないもの</string>
+    <string name="privacy_not_collect_body">メッセージ内容、アカウント、パスワード、画像、ファイル、閲覧履歴。</string>
+    <string name="privacy_storage_title">保存場所</string>
+    <string name="privacy_storage_body">このセッションのメモリ内のみで、ディスクには書き込みません。VPN を停止するか「記録を消去」をタップすると解放されます。</string>
+    <string name="privacy_transfer_title">ネットワークアクセス</string>
+    <string name="privacy_transfer_body">ローカルの接続記録がアップロードされることはありません。オンラインになるのは次の場合のみです：
+① デバイス登録——オンライン機能の初回使用時に、プラットフォーム、アプリバージョン、デバイス公開鍵を送信し、App Attest（iOS）/ Play Integrity（Android）で真正性を検証します。アクセス資格情報の発行のみに使用されます；
+② サービスインサイト——選択したドメインまたは IP のみがルックアップサーバーに送信され、AI モデルによる分析に転送されます；
+③ 購入の検証——レシートは権利確認のためサーバーに送信されます；
+④ ホワイトリスト——起動時にフィルタールールをサーバーからダウンロードします。
+これらのリクエストに接続記録は含まれません。</string>
+    <string name="privacy_third_party_title">サードパーティ SDK</string>
+    <string name="privacy_third_party_body">分析、広告、トラッキングはありません。IP ジオロケーションにはアプリに同梱されたオフラインデータベースを使用します。サービス解説は AI モデルが生成し、照会したアドレスのみがモデルに送信されます。</string>
+    <string name="privacy_location_title">位置情報の許可</string>
+    <string name="privacy_location_body">おおよその位置のみで、地図上の起点を示すためだけに使用します。保存もアップロードもされず、システム設定でいつでも取り消せます。</string>
+    <string name="privacy_vpn_title">VPN の許可</string>
+    <string name="privacy_vpn_body">VPN インターフェースは、システムがアプリに接続メタデータの閲覧を許可する唯一の方法であり、それだけが目的です。トラフィックは変更せずに転送します：ブロックも改変もしません。</string>
+    <string name="privacy_policy_link">プライバシーポリシー全文を読む</string>
+    <string name="privacy_clear">記録を消去</string>
+    <string name="privacy_clear_confirm_title">このセッションの記録を消去しますか？</string>
+    <string name="privacy_clear_confirm_body">現在のセッションのすべての接続記録が削除され、復元できません。VPN は接続されたままです。</string>
+    <string name="privacy_cleared">消去しました</string>
+    <string name="cancel">キャンセル</string>
+    <string name="confirm">OK</string>
+
+    <!-- First run -->
+    <string name="onboarding_hello">こんにちは</string>
+    <string name="onboarding_point_1">自分の接続を確認する</string>
+    <string name="onboarding_point_2">コンテンツは読まず、ディスクにも残しません</string>
+    <string name="onboarding_point_3">ローカル分析——照会時のみオンライン</string>
+    <string name="onboarding_start">はじめる</string>
+    <!-- Lookup -->
+    <string name="lookup_title">接続の詳細</string>
+    <string name="lookup_analysis">サービス解説</string>
+    <string name="lookup_consent">この接続のサービス運営者を照会するには、ドメインまたは IP をサーバーに送信する必要があります。通信内容、完全な URL、プロセス情報はアップロードされません。</string>
+    <string name="lookup_continue">照会を続ける</string>
+    <string name="lookup_loading">照会中…</string>
+    <string name="lookup_private">ローカル IP にはこれ以上の情報がありません</string>
+    <string name="lookup_busy">リクエストが多すぎます。しばらくしてから再試行してください</string>
+    <string name="lookup_request_expired">この照会は期限切れです。戻ってやり直してください</string>
+    <string name="lookup_purchase_needed">解説の表示には購入が必要です</string>
+    <string name="lookup_unavailable">照会は一時的に利用できません。後で再試行してください</string>
+    <string name="lookup_checkout_disabled">購入はまだ有効になっていません</string>
+    <string name="lookup_paying">支払い中…</string>
+    <string name="lookup_verifying">購入を確認中…</string>
+    <string name="lookup_pending">支払い処理中です。自動で付与されます</string>
+    <string name="lookup_expired">購入は無効になりました</string>
+    <string name="lookup_verify_failed">購入の確認に失敗しました。再試行できます</string>
+    <string name="lookup_single">1 回の照会</string>
+    <string name="lookup_pro">プロ · 月額</string>
+    <string name="lookup_pro_year">プロ · 年額</string>
+    <string name="lookup_subscription_note">プロは月額または年額で自動更新され、ストア設定からいつでもキャンセルできます。キャンセル後も当期は有効です</string>
+
+    <string name="lookup_retry">再試行</string>
+    <string name="lookup_restore">購入を復元</string>
+    <string name="lookup_target">対象</string>
+    <string name="lookup_location">場所</string>
+    <string name="lookup_owner">運営者</string>
+    <string name="lookup_risk">セキュリティ</string>
+    <string name="lookup_risk_low">低リスク</string>
+    <string name="lookup_risk_medium">中リスク</string>
+    <string name="lookup_risk_high">高リスク</string>
+    <string name="lookup_risk_unknown">不明</string>
+    <string name="lookup_summary">概要</string>
+    <string name="lookup_service">サービス</string>
+    <string name="lookup_category">カテゴリ</string>
+    <string name="lookup_confidence">信頼度</string>
+    <string name="lookup_confidence_high">高</string>
+    <string name="lookup_confidence_medium">中</string>
+    <string name="lookup_confidence_low">低</string>
+    <string name="lookup_cat_cdn">CDN</string>
+    <string name="lookup_cat_cloud">クラウド</string>
+    <string name="lookup_cat_ads">広告</string>
+    <string name="lookup_cat_telemetry">テレメトリ</string>
+    <string name="lookup_cat_social">ソーシャル</string>
+    <string name="lookup_cat_mail">メール</string>
+    <string name="lookup_cat_streaming">ストリーミング</string>
+    <string name="lookup_cat_os_vendor">OS ベンダー</string>
+    <string name="lookup_cat_iot">IoT</string>
+    <string name="lookup_cat_dev">開発者サービス</string>
+    <string name="lookup_cat_security">セキュリティ</string>
+    <string name="lookup_cat_other">その他</string>
+    <string name="uninstall">アンインストール</string>
+    <string name="later">後で</string>
+    <string name="legacy_app_title">旧バージョンを検出</string>
+    <string name="legacy_app_message">旧版 MobileWatchdog がインストールされたままです。VPN トンネルを奪い、このアプリがデータを受け取れなくなります。今すぐアンインストールしてください。</string>
+    <string name="summary">概要</string>
+    <string name="services_summary">%1$d 件のサービス · %2$d 回の接続 · %3$d 件をフィルター</string>
+</resources>

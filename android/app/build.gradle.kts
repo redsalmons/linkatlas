@@ -12,9 +12,11 @@ val keystoreProperties = Properties()
 rootProject.file("keystore.properties").takeIf { it.exists() }
     ?.inputStream()?.use { keystoreProperties.load(it) }
 
+val appVersionName = "1.0.0"
+
 android {
     namespace = "com.redsalmons.linkatlas"
-    setProperty("archivesBaseName", "linkatlas")
+    setProperty("archivesBaseName", "linkatlas-v$appVersionName")
     compileSdk = 35
     ndkVersion = "28.2.13676358"
     sourceSets.getByName("main").assets.srcDir("../../third_party/geoip/data")
@@ -24,7 +26,7 @@ android {
         minSdk = 26
         targetSdk = 35
         versionCode = 1
-        versionName = "1.0.0"
+        versionName = appVersionName
         val lookupUrl = providers.gradleProperty("lookupBaseUrl").getOrElse("")
             .replace("\\", "\\\\").replace("\"", "\\\"")
         buildConfigField("String", "LOOKUP_BASE_URL", "\"$lookupUrl\"")

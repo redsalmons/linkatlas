@@ -210,6 +210,7 @@ fun MapScreen(modifier: Modifier = Modifier, recenterTick: Int = 0, onBack: () -
     LaunchedEffect(map, style, granted) {
         val currentStyle = style ?: return@LaunchedEffect
         val currentMap = map ?: return@LaunchedEffect
+        if (!granted) return@LaunchedEffect
         var requestId = 1L
         var lastOrigin: Pair<Long, Long>? = null
         // Traffic records accumulate until the app exits or the user clears

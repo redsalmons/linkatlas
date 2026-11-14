@@ -17,14 +17,14 @@ val appVersionName = "1.0.0"
 android {
     namespace = "com.redsalmons.linkatlas"
     setProperty("archivesBaseName", "linkatlas-v$appVersionName")
-    compileSdk = 35
+    compileSdk = 36
     ndkVersion = "28.2.13676358"
     sourceSets.getByName("main").assets.srcDir("../../third_party/geoip/data")
 
     defaultConfig {
         applicationId = "com.redsalmons.linkatlas"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = appVersionName
         val lookupUrl = providers.gradleProperty("lookupBaseUrl").getOrElse("")

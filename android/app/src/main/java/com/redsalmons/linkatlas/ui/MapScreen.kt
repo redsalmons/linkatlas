@@ -404,6 +404,7 @@ private fun showUserLocation(context: Context, map: MapLibreMap, style: Style) {
 @Suppress("DEPRECATION")
 @SuppressLint("MissingPermission")
 private suspend fun currentLocation(context: Context): Location? {
+    if (!hasLocationPermission(context)) return null
     val lm = context.getSystemService(LocationManager::class.java) ?: return null
     // Coarse permission only: the network provider is the one that can answer.
     val provider = listOf(LocationManager.NETWORK_PROVIDER, LocationManager.PASSIVE_PROVIDER)

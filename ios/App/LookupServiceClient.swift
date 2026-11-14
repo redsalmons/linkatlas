@@ -398,6 +398,17 @@ actor LookupServiceClient {
             let fresh = try await deviceToken()
             if fresh == token { throw error }
             return try await postAuthenticated(path, body, fresh)
+        } catch {
+            // A transport failure can mean the server no longer knows our
+            // device certificate (DB restored from an older backup, cert
+            // revoked). Mark it unusable so deviceToken() re-registers via
+            // the bootstrap identity, then retry once.
+            guard deviceCertUsable,
+                  !(error is ApiFailure), !(error is Failure) else { throw error }
+            UserDefaults.standard.set(Int64(0), forKey: certExpiryKey)
+            let fresh = try await deviceToken()
+            if fresh == token { throw error }
+            return try await postAuthenticated(path, body, fresh)
         }
     }
 

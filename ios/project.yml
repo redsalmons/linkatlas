@@ -13,6 +13,7 @@ settings:
   base:
     SWIFT_VERSION: "5.0"
     CODE_SIGN_STYLE: Automatic
+    TARGETED_DEVICE_FAMILY: "1"
     MARKETING_VERSION: "1.0.0"
     CURRENT_PROJECT_VERSION: "1"
 targets:
@@ -33,6 +34,7 @@ targets:
         CFBundleDisplayName: 连线图志
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIRequiresFullScreen: true
         NSLocationWhenInUseUsageDescription: 仅用于在地图上标出你的起点，不保存、不上传
         LookupServiceURL: $(LOOKUP_SERVICE_URL)
         LookupServiceURLLAN: $(LOOKUP_SERVICE_URL_LAN)

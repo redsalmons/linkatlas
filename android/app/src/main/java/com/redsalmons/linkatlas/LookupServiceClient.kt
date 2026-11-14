@@ -325,6 +325,14 @@ class LookupServiceClient(
                     deviceToken()
                 }
                 post(path, body, fresh)
+            } catch (error: Exception) {
+                // A transport failure can mean the server no longer knows our
+                // device certificate (DB restored from an older backup, cert
+                // revoked). Drop it so deviceToken() re-registers via the
+                // bootstrap identity, then retry once.
+                if (error is ApiError || !deviceCertUsable()) throw error
+                runCatching { keyStore.deleteEntry(deviceKeyAlias) }
+                post(path, body, deviceToken())
             }
         }
     }

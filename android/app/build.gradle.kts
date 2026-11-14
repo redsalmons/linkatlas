@@ -14,6 +14,7 @@ rootProject.file("keystore.properties").takeIf { it.exists() }
 
 android {
     namespace = "com.redsalmons.linkatlas"
+    setProperty("archivesBaseName", "linkatlas")
     compileSdk = 35
     ndkVersion = "28.2.13676358"
     sourceSets.getByName("main").assets.srcDir("../../third_party/geoip/data")

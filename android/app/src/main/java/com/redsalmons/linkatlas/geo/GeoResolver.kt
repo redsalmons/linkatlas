@@ -1,5 +1,7 @@
 package com.redsalmons.linkatlas.geo
 
+import com.redsalmons.linkatlas.BuildConfig
+
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -83,7 +85,7 @@ class DbIpGeoResolver(
                         }
                     }
                 }
-                if (android.util.Log.isLoggable("RouteMap", android.util.Log.DEBUG)) {
+                if (BuildConfig.DEBUG) {
                     android.util.Log.d("RouteMap", "geo requests=${requests.size} cacheHits=$hits entries=${cache.size}")
                 }
                 results

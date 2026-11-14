@@ -1,8 +1,16 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
+
+// Release signing material lives in android/keystore.properties (gitignored):
+//   storeFile=..., storePassword=..., keyAlias=..., keyPassword=...
+val keystoreProperties = Properties()
+rootProject.file("keystore.properties").takeIf { it.exists() }
+    ?.inputStream()?.use { keystoreProperties.load(it) }
 
 android {
     namespace = "com.redsalmons.linkatlas"
@@ -15,7 +23,7 @@ android {
         minSdk = 26
         targetSdk = 35
         versionCode = 1
-        versionName = "0.1.0"
+        versionName = "1.0.0"
         val lookupUrl = providers.gradleProperty("lookupBaseUrl").getOrElse("")
             .replace("\\", "\\\\").replace("\"", "\\\"")
         buildConfigField("String", "LOOKUP_BASE_URL", "\"$lookupUrl\"")
@@ -36,8 +44,24 @@ android {
         compose = true
         buildConfig = true
     }
+    signingConfigs {
+        maybeCreate("release").apply {
+            val store = keystoreProperties.getProperty("storeFile")
+            if (store != null) {
+                storeFile = rootProject.file(store)
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
+        }
+    }
     buildTypes {
-        getByName("release") { buildConfigField("boolean", "LOOKUP_DEVELOPMENT", "false") }
+        getByName("release") {
+            buildConfigField("boolean", "LOOKUP_DEVELOPMENT", "false")
+            if (signingConfigs.getByName("release").storeFile != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

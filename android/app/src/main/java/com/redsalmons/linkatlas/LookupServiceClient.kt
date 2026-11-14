@@ -376,7 +376,7 @@ class LookupServiceClient(
             }
             return envelope.optJSONObject("data") ?: JSONObject()
             } catch (e: Exception) {
-                android.util.Log.e("LookupSvc", "post $path failed: ${e.javaClass.simpleName}: ${e.message}", e)
+                android.util.Log.w("LookupSvc", "post $path failed: ${e.javaClass.simpleName}: ${e.message}")
                 throw e
             }
         } finally {

@@ -16,3 +16,8 @@ android/**/build/
 # 内部文档（不公开）
 doc/
 ios/project.local.yml
+
+# 签名材料
+android/keystore.properties
+*.jks
+*.keystore

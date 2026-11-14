@@ -5,9 +5,11 @@ import OSLog
 
 private let httpLog = Logger(subsystem: "com.redsalmons.linkatlas", category: "PinnedHTTP")
 
-/// Temporary debug channel: device syslog is unreliable, so mirror key
-/// events into Documents/lookupdbg.log which devicectl can pull back.
+/// Debug-only channel: device syslog is unreliable, so mirror key events
+/// into Documents/lookupdbg.log which devicectl can pull back. No-op in
+/// release builds so no per-request traffic is written to disk.
 func dbgLog(_ msg: String) {
+    #if DEBUG
     NSLog("[LinkAtlas] %@", msg)
     guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
     let url = dir.appendingPathComponent("lookupdbg.log")
@@ -19,6 +21,7 @@ func dbgLog(_ msg: String) {
     } else {
         try? line.write(to: url, atomically: true, encoding: .utf8)
     }
+    #endif
 }
 
 /// Minimal HTTPS client built on nw_connection so each request carries the

@@ -1,5 +1,7 @@
 package com.redsalmons.linkatlas.ui
 
+import com.redsalmons.linkatlas.BuildConfig
+
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
@@ -232,7 +234,8 @@ fun MapScreen(modifier: Modifier = Modifier, recenterTick: Int = 0, onBack: () -
                 }
             }
             if (origin == null) {
-                android.util.Log.d("RouteMap", "tick: no origin yet (fix=${fix != null})")
+                if (BuildConfig.DEBUG)
+                    android.util.Log.d("RouteMap", "tick: no origin yet (fix=${fix != null})")
                 delay(3000)
                 continue
             }
@@ -305,7 +308,7 @@ fun MapScreen(modifier: Modifier = Modifier, recenterTick: Int = 0, onBack: () -
                 // SDK 13.7.1's object/JNI path dropped Point features on the device.
                 // Standard GeoJSON text preserves the points and their properties.
                 currentStyle.getSourceAs<GeoJsonSource>(MapConfig.MARKER_SOURCE)?.setGeoJson(geometry.markers.toJson())
-                if (android.util.Log.isLoggable("RouteMap", android.util.Log.DEBUG))
+                if (BuildConfig.DEBUG)
                     android.util.Log.d("RouteMap", "render routes=${fanned.size}")
             }
             delay(3000)

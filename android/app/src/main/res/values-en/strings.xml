@@ -93,7 +93,7 @@ None of these requests carries your connection history.</string>
     <string name="lookup_single">Single lookup</string>
     <string name="lookup_pro">Pro · Monthly</string>
     <string name="lookup_pro_year">Pro · Yearly</string>
-    <string name="lookup_subscription_note">Pro renews monthly or yearly and can be cancelled anytime in store settings; the current period stays active</string>
+    <string name="lookup_subscription_note">Pro is an auto-renewing subscription billed monthly or yearly. It renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime in store settings.</string>
 
     <string name="lookup_retry">Retry</string>
     <string name="lookup_restore">Restore purchases</string>
@@ -130,4 +130,6 @@ None of these requests carries your connection history.</string>
     <string name="legacy_app_message">The older MobileWatchdog build is still installed and will steal the VPN tunnel, leaving this app with no data. Uninstall it now.</string>
     <string name="summary">Summary</string>
     <string name="services_summary">%1$d services · %2$d connections · %3$d filtered</string>
+    <string name="lookup_terms">Terms of Service</string>
+    <string name="lookup_privacy_short">Privacy Policy</string>
 </resources>

@@ -93,7 +93,7 @@ Aucune de ces requêtes ne contient vos enregistrements de connexion.</string>
     <string name="lookup_single">Recherche unique</string>
     <string name="lookup_pro">Pro · Mensuel</string>
     <string name="lookup_pro_year">Pro · Annuel</string>
-    <string name="lookup_subscription_note">Pro se renouvelle mensuellement ou annuellement et peut être annulé à tout moment dans les réglages du store ; la période en cours reste active</string>
+    <string name="lookup_subscription_note">Pro est un abonnement à renouvellement automatique, facturé mensuellement ou annuellement. Il se renouvelle automatiquement sauf annulation au moins 24 heures avant la fin de la période en cours. Gérez ou annulez à tout moment dans les réglages du store.</string>
 
     <string name="lookup_retry">Réessayer</string>
     <string name="lookup_restore">Restaurer les achats</string>
@@ -130,4 +130,6 @@ Aucune de ces requêtes ne contient vos enregistrements de connexion.</string>
     <string name="legacy_app_message">L\'ancienne version de MobileWatchdog est encore installée et va accaparer le tunnel VPN, laissant cette app sans données. Désinstallez-la maintenant.</string>
     <string name="summary">Résumé</string>
     <string name="services_summary">%1$d services · %2$d connexions · %3$d filtrés</string>
+    <string name="lookup_terms">Conditions d\'utilisation</string>
+    <string name="lookup_privacy_short">Politique de confidentialité</string>
 </resources>

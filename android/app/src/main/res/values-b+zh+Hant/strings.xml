@@ -93,7 +93,7 @@
     <string name="lookup_single">單次查詢</string>
     <string name="lookup_pro">專業版 · 月付</string>
     <string name="lookup_pro_year">專業版 · 年付</string>
-    <string name="lookup_subscription_note">專業版按月或按年自動續訂，可隨時在商店管理頁面取消；取消後當期仍有效</string>
+    <string name="lookup_subscription_note">專業版為自動續訂訂閱：按月或按年計費，除非在當前週期結束前至少 24 小時取消，否則自動續訂；可隨時在商店管理頁面取消或管理。</string>
 
     <string name="lookup_retry">重試</string>
     <string name="lookup_restore">恢復購買</string>
@@ -130,4 +130,6 @@
     <string name="legacy_app_message">本機上還裝著舊版 MobileWatchdog，它會搶占 VPN 通道導致本應用收不到資料。建議立即解除安裝。</string>
     <string name="summary">概覽</string>
     <string name="services_summary">%1$d 個服務 · %2$d 次連線 · 已過濾 %3$d 個</string>
+    <string name="lookup_terms">服務條款</string>
+    <string name="lookup_privacy_short">隱私政策</string>
 </resources>

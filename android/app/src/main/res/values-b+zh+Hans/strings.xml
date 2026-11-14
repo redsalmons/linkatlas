@@ -93,7 +93,7 @@
     <string name="lookup_single">单次查询</string>
     <string name="lookup_pro">专业版 · 月付</string>
     <string name="lookup_pro_year">专业版 · 年付</string>
-    <string name="lookup_subscription_note">专业版按月或按年自动续订，可随时在商店管理页面取消；取消后当期仍有效</string>
+    <string name="lookup_subscription_note">专业版为自动续订订阅：按月或按年计费，除非在当前周期结束前至少 24 小时取消，否则自动续订；可随时在商店管理页面取消或管理。</string>
 
     <string name="lookup_retry">重试</string>
     <string name="lookup_restore">恢复购买</string>
@@ -130,4 +130,6 @@
     <string name="legacy_app_message">本机上还装着旧版 MobileWatchdog，它会抢占 VPN 隧道导致本应用收不到数据。建议立即卸载。</string>
     <string name="summary">概览</string>
     <string name="services_summary">%1$d 个服务 · %2$d 次连接 · 已过滤 %3$d 个</string>
+    <string name="lookup_terms">服务条款</string>
+    <string name="lookup_privacy_short">隐私政策</string>
 </resources>

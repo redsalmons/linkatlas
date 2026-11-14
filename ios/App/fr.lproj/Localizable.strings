@@ -135,3 +135,5 @@ Aucune de ces requêtes ne contient vos enregistrements de connexion.";
 "返回" = "Retour";
 " · 约略位置" = " · approximatif";
 "专业版 · 年付" = "Pro · Annuel";
+"专业版为自动续订订阅：按月或按年计费，除非在当前周期结束前至少 24 小时取消，否则自动续订；可随时在 App Store 账户设置中管理或取消" = "Pro est un abonnement à renouvellement automatique, facturé mensuellement ou annuellement. Il se renouvelle automatiquement sauf annulation au moins 24 heures avant la fin de la période en cours. Gérez ou annulez à tout moment dans les réglages du compte App Store.";
+"服务条款" = "Conditions d'utilisation";

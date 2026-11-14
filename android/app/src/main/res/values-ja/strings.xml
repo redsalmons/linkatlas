@@ -93,7 +93,7 @@
     <string name="lookup_single">1 回の照会</string>
     <string name="lookup_pro">プロ · 月額</string>
     <string name="lookup_pro_year">プロ · 年額</string>
-    <string name="lookup_subscription_note">プロは月額または年額で自動更新され、ストア設定からいつでもキャンセルできます。キャンセル後も当期は有効です</string>
+    <string name="lookup_subscription_note">プロは自動更新サブスクリプションです。月額または年額で課金され、現在の期間終了の24時間前までにキャンセルしない限り自動更新されます。ストア設定からいつでも管理・キャンセルできます。</string>
 
     <string name="lookup_retry">再試行</string>
     <string name="lookup_restore">購入を復元</string>
@@ -130,4 +130,6 @@
     <string name="legacy_app_message">旧版 MobileWatchdog がインストールされたままです。VPN トンネルを奪い、このアプリがデータを受け取れなくなります。今すぐアンインストールしてください。</string>
     <string name="summary">概要</string>
     <string name="services_summary">%1$d 件のサービス · %2$d 回の接続 · %3$d 件をフィルター</string>
+    <string name="lookup_terms">利用規約</string>
+    <string name="lookup_privacy_short">プライバシーポリシー</string>
 </resources>

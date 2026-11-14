@@ -93,7 +93,7 @@
     <string name="lookup_single">Один запрос</string>
     <string name="lookup_pro">Pro · Ежемесячно</string>
     <string name="lookup_pro_year">Pro · Ежегодно</string>
-    <string name="lookup_subscription_note">Pro продлевается ежемесячно или ежегодно, отменить можно в любой момент в настройках магазина; текущий период остаётся активным</string>
+    <string name="lookup_subscription_note">Pro — это подписка с автоматическим продлением, оплачиваемая ежемесячно или ежегодно. Она продлевается автоматически, если не отменена как минимум за 24 часа до конца текущего периода. Управляйте или отмените в любое время в настройках магазина.</string>
 
     <string name="lookup_retry">Повторить</string>
     <string name="lookup_restore">Восстановить покупки</string>
@@ -130,4 +130,6 @@
     <string name="legacy_app_message">Старая сборка MobileWatchdog всё ещё установлена и захватит VPN-туннель, из-за чего это приложение не получит данные. Удалите её сейчас.</string>
     <string name="summary">Сводка</string>
     <string name="services_summary">%1$d сервисов · %2$d соединений · %3$d отфильтровано</string>
+    <string name="lookup_terms">Условия использования</string>
+    <string name="lookup_privacy_short">Политика конфиденциальности</string>
 </resources>

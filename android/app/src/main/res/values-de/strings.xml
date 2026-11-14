@@ -93,7 +93,7 @@ Keine dieser Anfragen enthält deine Verbindungsdaten.</string>
     <string name="lookup_single">Einzelsuche</string>
     <string name="lookup_pro">Pro · Monatlich</string>
     <string name="lookup_pro_year">Pro · Jährlich</string>
-    <string name="lookup_subscription_note">Pro verlängert sich monatlich oder jährlich und kann jederzeit in den Store-Einstellungen gekündigt werden; der laufende Zeitraum bleibt aktiv</string>
+    <string name="lookup_subscription_note">Pro ist ein automatisch verlängerndes Abo, das monatlich oder jährlich abgerechnet wird. Es verlängert sich automatisch, sofern es nicht mindestens 24 Stunden vor Ende des aktuellen Zeitraums gekündigt wird. Verwaltung oder Kündigung jederzeit in den Shop-Einstellungen.</string>
 
     <string name="lookup_retry">Wiederholen</string>
     <string name="lookup_restore">Käufe wiederherstellen</string>
@@ -130,4 +130,6 @@ Keine dieser Anfragen enthält deine Verbindungsdaten.</string>
     <string name="legacy_app_message">Der ältere MobileWatchdog-Build ist noch installiert und wird den VPN-Tunnel übernehmen, sodass diese App keine Daten erhält. Jetzt deinstallieren.</string>
     <string name="summary">Zusammenfassung</string>
     <string name="services_summary">%1$d Dienste · %2$d Verbindungen · %3$d gefiltert</string>
+    <string name="lookup_terms">Nutzungsbedingungen</string>
+    <string name="lookup_privacy_short">Datenschutzerklärung</string>
 </resources>

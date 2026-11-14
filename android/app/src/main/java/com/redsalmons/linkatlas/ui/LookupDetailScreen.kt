@@ -177,6 +177,16 @@ internal fun LookupDetailScreen(snapshot: String, onBack: () -> Unit) {
                                 }
                             }
                             Text(stringResource(R.string.lookup_subscription_note), style = MaterialTheme.typography.bodySmall)
+                            Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                                TextButton(onClick = {
+                                    context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW,
+                                        android.net.Uri.parse("https://redsalmons.github.io/linkatlas/terms.html")))
+                                }) { Text(stringResource(R.string.lookup_terms), style = MaterialTheme.typography.bodySmall) }
+                                TextButton(onClick = {
+                                    context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW,
+                                        android.net.Uri.parse("https://redsalmons.github.io/linkatlas/privacy.html")))
+                                }) { Text(stringResource(R.string.lookup_privacy_short), style = MaterialTheme.typography.bodySmall) }
+                            }
                             if (api != null) {
                                 TextButton(enabled = purchase.state !in listOf("paying", "verifying"),
                                     onClick = { billing?.restore() }) { Text(stringResource(R.string.lookup_restore)) }

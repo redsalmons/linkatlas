@@ -93,7 +93,7 @@ Mikään näistä pyynnöistä ei sisällä yhteystietueitasi.</string>
     <string name="lookup_single">Yksittäinen haku</string>
     <string name="lookup_pro">Pro · Kuukausittain</string>
     <string name="lookup_pro_year">Pro · Vuosittain</string>
-    <string name="lookup_subscription_note">Pro uusiutuu kuukausittain tai vuosittain ja sen voi perua milloin tahansa kaupan asetuksista; käynnissä oleva jakso pysyy voimassa</string>
+    <string name="lookup_subscription_note">Pro on automaattisesti uusiutuva tilaus, joka veloitetaan kuukausittain tai vuosittain. Se uusiutuu automaattisesti, ellei se peruuteta vähintään 24 tuntia ennen nykyisen jakson päättymistä. Hallitse tai peru milloin tahansa kaupan asetuksissa.</string>
 
     <string name="lookup_retry">Yritä uudelleen</string>
     <string name="lookup_restore">Palauta ostot</string>
@@ -130,4 +130,6 @@ Mikään näistä pyynnöistä ei sisällä yhteystietueitasi.</string>
     <string name="legacy_app_message">Vanhempi MobileWatchdog-versio on edelleen asennettuna ja se ottaa VPN-tunnelin hallintaansa, jolloin tämä sovellus ei saa dataa. Poista se nyt.</string>
     <string name="summary">Yhteenveto</string>
     <string name="services_summary">%1$d palvelua · %2$d yhteyttä · %3$d suodatettu</string>
+    <string name="lookup_terms">Käyttöehdot</string>
+    <string name="lookup_privacy_short">Tietosuojakäytäntö</string>
 </resources>

@@ -146,10 +146,18 @@ struct LookupDetailView: View {
             purchaseButton(productId: LookupBilling.proProductID, label: String(localized: "专业版 · 月付"))
             purchaseButton(productId: LookupBilling.proYearProductID, label: String(localized: "专业版 · 年付"))
 
-            Text(String(localized: "专业版按月或按年自动续订，可随时在商店管理页面取消；取消后当期仍有效"))
-                .font(.caption2)
+            Text(String(localized: "专业版为自动续订订阅：按月或按年计费，除非在当前周期结束前至少 24 小时取消，否则自动续订；可随时在 App Store 账户设置中管理或取消"))
+                .font(.caption)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
+
+            HStack(spacing: 16) {
+                Link(String(localized: "服务条款"),
+                     destination: URL(string: "https://redsalmons.github.io/linkatlas/terms.html")!)
+                Link(String(localized: "隐私政策"),
+                     destination: URL(string: "https://redsalmons.github.io/linkatlas/privacy.html")!)
+            }
+            .font(.caption)
         }
     }
 

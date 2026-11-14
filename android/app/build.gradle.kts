@@ -56,8 +56,20 @@ android {
         }
     }
     buildTypes {
+        getByName("debug") {
+            // Dev environment; override with -PlookupBaseUrl=...
+            if (providers.gradleProperty("lookupBaseUrl").orNull == null) {
+                buildConfigField("String", "LOOKUP_BASE_URL", "\"https://testapp.freedomsalmon.com\"")
+            }
+            if (providers.gradleProperty("lookupDevelopment").orNull == null) {
+                buildConfigField("boolean", "LOOKUP_DEVELOPMENT", "true")
+            }
+        }
         getByName("release") {
             buildConfigField("boolean", "LOOKUP_DEVELOPMENT", "false")
+            if (providers.gradleProperty("lookupBaseUrl").orNull == null) {
+                buildConfigField("String", "LOOKUP_BASE_URL", "\"https://app.freedomsalmon.com\"")
+            }
             if (signingConfigs.getByName("release").storeFile != null) {
                 signingConfig = signingConfigs.getByName("release")
             }

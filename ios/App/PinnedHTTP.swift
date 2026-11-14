@@ -50,8 +50,8 @@ final class PinnedHTTPClient {
         identityLock.unlock()
     }
 
-    init(bundle: Bundle = .main) throws {
-        guard let caURL = bundle.url(forResource: "LookupCA", withExtension: "cer"),
+    init(bundle: Bundle = .main, caResource: String = "LookupCA") throws {
+        guard let caURL = bundle.url(forResource: caResource, withExtension: "cer"),
               let caData = try? Data(contentsOf: caURL),
               let certificate = SecCertificateCreateWithData(nil, caData as CFData) else {
             throw URLError(.fileDoesNotExist)

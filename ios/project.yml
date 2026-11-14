@@ -34,7 +34,7 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         NSLocationWhenInUseUsageDescription: 仅用于在地图上标出你的起点，不保存、不上传
-        LookupServiceURL: https://app.freedomsalmon.com
+        LookupServiceURL: $(LOOKUP_SERVICE_URL)
         NSAppTransportSecurity:
           NSAllowsLocalNetworking: true
     entitlements:
@@ -46,8 +46,10 @@ targets:
       configs:
         Debug:
           APP_ATTEST_ENVIRONMENT: development
+          LOOKUP_SERVICE_URL: https://testapp.freedomsalmon.com
         Release:
           APP_ATTEST_ENVIRONMENT: production
+          LOOKUP_SERVICE_URL: https://app.freedomsalmon.com
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.redsalmons.linkatlas
         SWIFT_OBJC_BRIDGING_HEADER: App/App-Bridging-Header.h

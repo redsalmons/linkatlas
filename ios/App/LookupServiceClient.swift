@@ -75,11 +75,12 @@ actor LookupServiceClient {
         self.baseURL = baseURL
         self.mode = mode
         self.storageAccount = "\(baseURL.absoluteString)|\(mode.rawValue)"
-        self.network = try PinnedHTTPClient()
-        if let identity = Self.loadStoredIdentity() {
+        self.devEnv = baseURL.host == "testapp.freedomsalmon.com"
+        self.network = try PinnedHTTPClient(caResource: devEnv ? "LookupCA-dev" : "LookupCA")
+        if let identity = loadStoredIdentity() {
             dbgLog("[Lookup] using device identity")
             self.network.setIdentity(identity)
-        } else if let identity = Self.loadBootstrapIdentity() {
+        } else if let identity = loadBootstrapIdentity() {
             dbgLog("[Lookup] using bootstrap identity")
             self.network.setIdentity(identity)
         } else {
@@ -89,11 +90,18 @@ actor LookupServiceClient {
 
     // MARK: - Device key / client certificate
 
+    /// The dev environment (testapp.*) has its own CA and bootstrap identity —
+    /// the production CA key never leaves the production host. Everything
+    /// below that touches the keychain is suffixed per environment so the two
+    /// identities never alias.
+    private let devEnv: Bool
+    private var bootstrapP12Password: String { devEnv ? "f0985d239d0910c1fd775c432ee60968" : "597434c48fb0c8986619004be331979c" }
+    private var bootstrapResource: String { devEnv ? "LinkAtlas-bootstrap-dev" : "LinkAtlas-bootstrap" }
+    private var envSuffix: String { devEnv ? ".dev" : "" }
     private static let deviceKeyTag = "com.redsalmons.linkatlas.devicekey"
-    private static let deviceCertLabel = "com.redsalmons.linkatlas.devicecert"
-    private static let bootstrapP12Password = "597434c48fb0c8986619004be331979c"
-    private static let bootstrapCertLabel = "com.redsalmons.linkatlas.bootstrapcert"
-    private static let bootstrapKeyLabel = "com.redsalmons.linkatlas.bootstrapkey"
+    private var deviceCertLabel: String { "com.redsalmons.linkatlas.devicecert" + envSuffix }
+    private var bootstrapCertLabel: String { "com.redsalmons.linkatlas.bootstrapcert" + envSuffix }
+    private var bootstrapKeyLabel: String { "com.redsalmons.linkatlas.bootstrapkey" + envSuffix }
 
     /// Bundled bootstrap identity: used before registration issues a device
     /// certificate. The server restricts it to challenge/register/refresh and
@@ -102,9 +110,9 @@ actor LookupServiceClient {
     /// The identity MUST be keychain-backed: an in-memory identity from
     /// SecPKCS12Import cannot sign the TLS CertificateVerify (securityd needs
     /// a persistent key), so the client silently aborts the handshake.
-    private static func loadBootstrapIdentity() -> SecIdentity? {
+    private func loadBootstrapIdentity() -> SecIdentity? {
         if let identity = bootstrapKeychainIdentity() { return identity }
-        guard let url = Bundle.main.url(forResource: "LinkAtlas-bootstrap", withExtension: "p12"),
+        guard let url = Bundle.main.url(forResource: bootstrapResource, withExtension: "p12"),
               let data = try? Data(contentsOf: url) else {
             dbgLog("[Lookup] bootstrap p12 missing from bundle"); return nil }
         var items: CFArray?
@@ -138,7 +146,7 @@ actor LookupServiceClient {
         return stored
     }
 
-    private static func bootstrapKeychainIdentity() -> SecIdentity? {
+    private func bootstrapKeychainIdentity() -> SecIdentity? {
         let query: [String: Any] = [
             kSecClass as String: kSecClassIdentity,
             kSecAttrLabel as String: bootstrapCertLabel,
@@ -200,9 +208,9 @@ actor LookupServiceClient {
     /// Installed device cert expiry (unix seconds). Once it lapses the server
     /// refuses the handshake, so the client must drop back to the bundled
     /// bootstrap identity to reach register/refresh.
-    private static let certExpiryKey = "com.redsalmons.linkatlas.certexpiry"
+    private var certExpiryKey: String { "com.redsalmons.linkatlas.certexpiry" + envSuffix }
 
-    private static var deviceCertUsable: Bool {
+    private var deviceCertUsable: Bool {
         (UserDefaults.standard.object(forKey: certExpiryKey) as? Int64 ?? 0)
             > Int64(Date().timeIntervalSince1970)
     }
@@ -216,7 +224,7 @@ actor LookupServiceClient {
               let cert = SecCertificateCreateWithData(nil, derData as CFData) else { return }
         let query: [String: Any] = [
             kSecClass as String: kSecClassCertificate,
-            kSecAttrLabel as String: Self.deviceCertLabel]
+            kSecAttrLabel as String: deviceCertLabel]
         SecItemDelete(query as CFDictionary)
         var attrs = query
         attrs[kSecValueRef as String] = cert
@@ -224,8 +232,8 @@ actor LookupServiceClient {
         // Persist the expiry BEFORE loading the identity — loadStoredIdentity
         // gates on deviceCertUsable, which reads this key. A freshly issued
         // cert is usable by definition, so also load it unconditionally.
-        if let expires { UserDefaults.standard.set(expires, forKey: Self.certExpiryKey) }
-        if let identity = Self.keychainIdentity() {
+        if let expires { UserDefaults.standard.set(expires, forKey: certExpiryKey) }
+        if let identity = keychainIdentity() {
             network.setIdentity(identity)
             dbgLog("[Lookup] device cert installed, expires=\(expires ?? 0)")
         } else {
@@ -233,7 +241,7 @@ actor LookupServiceClient {
         }
     }
 
-    private static func keychainIdentity() -> SecIdentity? {
+    private func keychainIdentity() -> SecIdentity? {
         let query: [String: Any] = [
             kSecClass as String: kSecClassIdentity,
             kSecAttrLabel as String: deviceCertLabel,
@@ -244,7 +252,7 @@ actor LookupServiceClient {
         return (item as! SecIdentity)
     }
 
-    private static func loadStoredIdentity() -> SecIdentity? {
+    private func loadStoredIdentity() -> SecIdentity? {
         deviceCertUsable ? keychainIdentity() : nil
     }
 
@@ -273,7 +281,7 @@ actor LookupServiceClient {
         // it reissues the cert — until a usable device cert exists.
         if let session = try readSession(),
            session.expiresAt > Int64(Date().timeIntervalSince1970) + 60,
-           Self.deviceCertUsable {
+           deviceCertUsable {
             return session.deviceToken
         }
         if let pending { return try await pending.value }
@@ -286,7 +294,7 @@ actor LookupServiceClient {
     private func registerOrRefresh() async throws -> String {
         // An expired device cert fails the TLS handshake — drop to the bundled
         // bootstrap identity, which is allowed to reach register/refresh.
-        if !Self.deviceCertUsable, let bootstrap = Self.loadBootstrapIdentity() {
+        if !deviceCertUsable, let bootstrap = loadBootstrapIdentity() {
             network.setIdentity(bootstrap)
         }
         if let session = try readSession(),

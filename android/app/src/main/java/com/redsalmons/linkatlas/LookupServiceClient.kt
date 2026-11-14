@@ -72,9 +72,12 @@ class LookupServiceClient(
     // under the same alias. Until registration delivers a cert, connections use
     // the bundled bootstrap identity — the server restricts it to
     // challenge/register/refresh and the whitelist.
+    // The dev environment (testapp.*) has its own CA and bootstrap identity so
+    // the production CA key never leaves the production host.
+    private val devEnv = base.host == "testapp.freedomsalmon.com"
     private val deviceKeyAlias = "linkatlas.devicekey"
     private val bootstrapAlias = "linkatlas.bootstrap"
-    private val bootstrapPassword = "597434c48fb0c8986619004be331979c"
+    private val bootstrapPassword = if (devEnv) "f0985d239d0910c1fd775c432ee60968" else "597434c48fb0c8986619004be331979c"
     private val keyStore = KeyStore.getInstance("AndroidKeyStore").apply { load(null) }
 
     // Bundled bootstrap identity (register-only). Loaded once; its cert is a
@@ -82,10 +85,17 @@ class LookupServiceClient(
     // it buys handshake access to bootstrap endpoints only.
     private val bootstrapStore = KeyStore.getInstance("PKCS12").apply {
         runCatching {
-            load(context.resources.openRawResource(R.raw.linkatlas_bootstrap),
+            load(context.resources.openRawResource(
+                if (devEnv) R.raw.linkatlas_bootstrap_dev else R.raw.linkatlas_bootstrap),
                 bootstrapPassword.toCharArray())
         }
     }
+
+    private val caCert: X509Certificate? = runCatching {
+        CertificateFactory.getInstance("X.509").generateCertificate(
+            context.resources.openRawResource(
+                if (devEnv) R.raw.linkatlas_ca_dev else R.raw.linkatlas_ca)) as X509Certificate
+    }.getOrNull()
 
     // A server-issued device cert is present and unexpired. Sessions held over
     // from before per-device certs have a valid token but no cert — without
@@ -94,7 +104,7 @@ class LookupServiceClient(
         val leaf = keyStore.getCertificateChain(deviceKeyAlias)
             ?.firstOrNull() as? X509Certificate
         leaf != null && leaf.notAfter.after(java.util.Date()) &&
-            leaf.issuerX500Principal.name.contains("LinkAtlas Local CA")
+            leaf.issuerX500Principal == caCert?.subjectX500Principal
     }.getOrDefault(false)
 
     private inner class DeviceKeyManager : X509KeyManager {
@@ -142,9 +152,7 @@ class LookupServiceClient(
         runCatching {
             val caStore = KeyStore.getInstance(KeyStore.getDefaultType()).apply {
                 load(null, null)
-                val ca = CertificateFactory.getInstance("X.509").generateCertificate(
-                    context.resources.openRawResource(R.raw.linkatlas_ca))
-                setCertificateEntry("ca", ca)
+                setCertificateEntry("ca", caCert)
             }
             val trustManagers = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())
                 .apply { init(caStore) }

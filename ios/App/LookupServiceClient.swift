@@ -13,10 +13,20 @@ actor LookupServiceClient {
     }
 
     /// Shared instance configured from Info.plist key "LookupServiceURL".
-    /// Falls back to development mode on simulator.
+    /// Physical debug devices use "LookupServiceURLLAN" instead — testapp
+    /// resolves to 127.0.0.1, which on a phone is the phone itself, so a real
+    /// device needs the dev machine's LAN name (mDNS .local works on iOS).
     static let shared: LookupServiceClient? = {
-        guard let urlString = Bundle.main.object(forInfoDictionaryKey: "LookupServiceURL") as? String,
-              let url = URL(string: urlString) else {
+        let plistKey: String = {
+            #if DEBUG && !targetEnvironment(simulator)
+            return "LookupServiceURLLAN"
+            #else
+            return "LookupServiceURL"
+            #endif
+        }()
+        let urlString = (Bundle.main.object(forInfoDictionaryKey: plistKey) as? String)
+            ?? Bundle.main.object(forInfoDictionaryKey: "LookupServiceURL") as? String
+        guard let urlString, let url = URL(string: urlString) else {
             #if targetEnvironment(simulator)
             return try? LookupServiceClient(baseURL: URL(string: "http://localhost:8080")!, mode: .development)
             #else
@@ -75,7 +85,7 @@ actor LookupServiceClient {
         self.baseURL = baseURL
         self.mode = mode
         self.storageAccount = "\(baseURL.absoluteString)|\(mode.rawValue)"
-        self.devEnv = baseURL.host == "testapp.freedomsalmon.com"
+        self.devEnv = baseURL.host != "app.freedomsalmon.com"
         self.network = try PinnedHTTPClient(caResource: devEnv ? "LookupCA-dev" : "LookupCA")
         if let identity = loadStoredIdentity() {
             dbgLog("[Lookup] using device identity")

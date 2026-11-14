@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>LookupServiceURL</key>
 	<string>$(LOOKUP_SERVICE_URL)</string>
+	<key>LookupServiceURLLAN</key>
+	<string>$(LOOKUP_SERVICE_URL_LAN)</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsLocalNetworking</key>

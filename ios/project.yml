@@ -35,6 +35,7 @@ targets:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         NSLocationWhenInUseUsageDescription: 仅用于在地图上标出你的起点，不保存、不上传
         LookupServiceURL: $(LOOKUP_SERVICE_URL)
+        LookupServiceURLLAN: $(LOOKUP_SERVICE_URL_LAN)
         NSAppTransportSecurity:
           NSAllowsLocalNetworking: true
     entitlements:

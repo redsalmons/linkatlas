@@ -74,7 +74,7 @@ class LookupServiceClient(
     // challenge/register/refresh and the whitelist.
     // The dev environment (testapp.*) has its own CA and bootstrap identity so
     // the production CA key never leaves the production host.
-    private val devEnv = base.host == "testapp.freedomsalmon.com"
+    private val devEnv = base.host != "app.freedomsalmon.com"
     private val deviceKeyAlias = "linkatlas.devicekey"
     private val bootstrapAlias = "linkatlas.bootstrap"
     private val bootstrapPassword = if (devEnv) "f0985d239d0910c1fd775c432ee60968" else "597434c48fb0c8986619004be331979c"
